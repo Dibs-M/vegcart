@@ -1790,7 +1790,7 @@
             <!-- End container -->
 			
 			 <!--End container-->
-            <div class="container container-ver2 blog-home1">
+ <!--            <div class="container container-ver2 blog-home1">
                     <div class="title-text-v2">
                         <div class="icon-title align-center space-20">
                             <img src="assets/images/title-lastest-from.png" alt="icon-title">
@@ -1798,7 +1798,7 @@
                         <h3>Lastest From Blog</h3>
                         <a class="link padding-bt-20" href="#" title="See all">See all</a>
                     </div>
-                    <!-- End title -->
+                    End title
                     <div class="blog-content slider-three-item owl-carousel">
                         <div class="item">
                             <a class="hover-images" href="#" title="images">
@@ -1810,7 +1810,7 @@
                                 <p class="by">Post by <span>FreshFood</span> - 16 Comments</p>
                             </div>
                         </div>
-                        <!-- End item -->
+                        End item
                         <div class="item">
                             <a class="hover-images" href="#" title="images">
                                 <img class="img-responsive" src="assets/images/ImgBlog/2.jpg" alt="blog">
@@ -1821,7 +1821,7 @@
                                 <p class="by">Post by <span>FreshFood</span> - 16 Comments</p>
                             </div>
                         </div>
-                        <!-- End item -->
+                        End item
                         <div class="item">
                             <a class="hover-images" href="#" title="images">
                                 <img class="img-responsive" src="assets/images/ImgBlog/3.jpg" alt="blog">
@@ -1832,10 +1832,10 @@
                                 <p class="by">Post by <span>FreshFood</span> - 16 Comments</p>
                             </div>
                         </div>
-                        <!-- End item -->
+                        End item
                     </div>
-                    <!-- End blog-content -->
-            </div>
+                    End blog-content
+            </div> -->
             <!-- End container -->
 			
 			<div class="choose-us">
@@ -1993,7 +1993,7 @@
             </div>
             <!-- End container -->
 			
-            <div class="container container-ver2">
+     <!--        <div class="container container-ver2">
                 <div class="brand-content owl-carousel">
                     <div class="items">
                         <a href="#" title="brand"><img class="img-responsive" src="assets/images/brand-1a.png" alt="Brand"></a>
@@ -2015,9 +2015,9 @@
                     </div>
                 </div>
             </div>
-            <!--End container-->
+            End container
         </div>
-    </div>
+    </div> -->
     <!--End bg-slider-->
     <div id="back-to-top">
         <i class="fa fa-long-arrow-up"></i>
