@@ -1,5 +1,8 @@
 package com.test.vegcart.service.impl;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -60,6 +63,29 @@ public class CustomerServiceImpl implements CustomerService {
 		// TODO Auto-generated method stub
 		oderHistoryDAO.save(orderHistory);
 		return "success";
+	}
+
+	@Transactional
+	@Override
+	public Customer getCustomerByMobile(Customer customer) throws Exception {
+		// TODO Auto-generated method stub
+		return customerDAO.findById(customer.getMobile()).get();
+	}
+
+	@Transactional
+	@Override
+	public String placeOrders(List<Order> orders) {
+		// TODO Auto-generated method stub
+		orderDAO.saveAll(orders);
+		return "success";
+	}
+
+	@Override
+	public List<Order> getCustomerOrders(Customer customer) {
+		// TODO Auto-generated method stub
+		List<Order> orderList=new ArrayList<Order>();
+		orderDAO.findByCustomerMobile(customer.getMobile()).forEach(orderList::add);
+		return orderList;
 	}
 
 }

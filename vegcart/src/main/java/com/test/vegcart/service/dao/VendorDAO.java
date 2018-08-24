@@ -8,4 +8,5 @@ import com.test.vegcart.entity.Vendor;
 @Repository
 public interface VendorDAO extends CrudRepository<Vendor, Integer> {
 
+	public Vendor getVendorByVendorMobile(String vendorMobile);
 }

@@ -22,6 +22,9 @@ public class Vendor {
 	@Column(name="vendor_mobile")
 	private String vendorMobile;
 	
+	@Column(name="vendor_password")
+	private String vendorPassword;
+	
 	@Column(name="active")
 	private String active="Y";
 	
@@ -48,6 +51,12 @@ public class Vendor {
 	}
 	public void setActive(String active) {
 		this.active = active;
+	}
+	public String getVendorPassword() {
+		return vendorPassword;
+	}
+	public void setVendorPassword(String vendorPassword) {
+		this.vendorPassword = vendorPassword;
 	}
 	
 	

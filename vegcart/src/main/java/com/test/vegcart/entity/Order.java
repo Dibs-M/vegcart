@@ -40,10 +40,10 @@ public class Order {
 	private double discount;
 	
 	@Column(name="product_actual_quantity")
-	private int productActualQuantity;
+	private int productActualQuantity=1;
 	
 	@Column(name="total_amount")
-	private int totalAmount;
+	private double totalAmount;
 	
 	@Column(name="order_date")
 	@Temporal(TemporalType.TIMESTAMP)
@@ -54,8 +54,11 @@ public class Order {
 	@Column(name="vendor_id")
 	private int vendorId;
 	
-	@Column(name="customer_id")
-	private int customerId;
+	@Column(name="customer_mobile")
+	private String customerMobile;
+	
+	@Column(name="customer_address")
+	private String customerAddress;
 	
 	@Column(name="order_status")
 	private String orderStatus="Recieved";
@@ -128,11 +131,12 @@ public class Order {
 		this.productActualQuantity = productActualQuantity;
 	}
 
-	public int getTotalAmount() {
+
+	public double getTotalAmount() {
 		return totalAmount;
 	}
 
-	public void setTotalAmount(int totalAmount) {
+	public void setTotalAmount(double totalAmount) {
 		this.totalAmount = totalAmount;
 	}
 
@@ -160,13 +164,22 @@ public class Order {
 		this.vendorId = vendorId;
 	}
 
-	public int getCustomerId() {
-		return customerId;
+	public String getCustomerMobile() {
+		return customerMobile;
 	}
 
-	public void setCustomerId(int customerId) {
-		this.customerId = customerId;
+	public void setCustomerMobile(String customerMobile) {
+		this.customerMobile = customerMobile;
 	}
+
+	public String getCustomerAddress() {
+		return customerAddress;
+	}
+
+	public void setCustomerAddress(String customerAddress) {
+		this.customerAddress = customerAddress;
+	}
+
 	
 	
 }

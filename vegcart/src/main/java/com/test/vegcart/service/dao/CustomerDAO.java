@@ -4,6 +4,6 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.test.vegcart.entity.Customer;
 
-public interface CustomerDAO extends CrudRepository<Customer, Integer> {
+public interface CustomerDAO extends CrudRepository<Customer, String> {
 
 }
