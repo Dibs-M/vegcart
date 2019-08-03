@@ -1,6 +1,7 @@
 package com.test.vegcart.service.impl;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -28,8 +29,11 @@ public class MaserServiceImpl implements MasterService {
 	public List<Product> getProducts() {
 		// TODO Auto-generated method stub
 		List<Product> productList=new ArrayList<>();
-		Iterable<Product> products=productDAO.findAll();
-		products.forEach(productList::add);
+		Iterator<Product> itr=productDAO.findAll().iterator();
+		while(itr.hasNext()) {
+			productList.add(itr.next());
+		}
+		//products.forEach(productList::add);
 		return productList;
 	}
 
@@ -38,8 +42,11 @@ public class MaserServiceImpl implements MasterService {
 	public List<Units> getUnits() {
 		// TODO Auto-generated method stub
 		List<Units> unitList=new ArrayList<>();
-		Iterable<Units> units=unitDAO.findAll();
-		units.forEach(unitList::add);
+		Iterator<Units> itr=unitDAO.findAll().iterator();
+		while(itr.hasNext()) {
+			unitList.add(itr.next());
+		}
+		//units.forEach(unitList::add);
 		return unitList;
 	}
 

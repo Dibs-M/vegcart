@@ -1,6 +1,7 @@
 package com.test.vegcart.service.impl;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,7 +56,11 @@ public class VendorServiceImpl implements VendorService {
 	public List<VendorProducts> getAllVendorProducts() {
 		// TODO Auto-generated method stub
 		List<VendorProducts> vendorProducts=new ArrayList<VendorProducts>();
-		vendorProductsDAO.findAll().forEach(vendorProducts::add);
+		//vendorProductsDAO.findAll().forEach(vendorProducts::add);
+		Iterator<VendorProducts> itr=vendorProductsDAO.findAll().iterator();
+		while(itr.hasNext()) {
+			vendorProducts.add(itr.next());
+		}
 		return vendorProducts;
 	}
 
@@ -64,7 +69,11 @@ public class VendorServiceImpl implements VendorService {
 	public List<VendorProducts> getVendorProductByIds(List<Integer> ids) {
 		// TODO Auto-generated method stub
 		List<VendorProducts> vendorProducts=new ArrayList<VendorProducts>();
-		vendorProductsDAO.findAllById(ids).forEach(vendorProducts::add);
+		//vendorProductsDAO.findAllById(ids).forEach(vendorProducts::add);
+		Iterator<VendorProducts> itr=vendorProductsDAO.findAll(ids).iterator();
+		while(itr.hasNext()) {
+			vendorProducts.add(itr.next());
+		}
 		return vendorProducts;
 	}
 
@@ -80,7 +89,11 @@ public class VendorServiceImpl implements VendorService {
 	public List<Order> getVendorOrders(Vendor vendor) {
 		// TODO Auto-generated method stub
 		List<Order> vendorOrders=new ArrayList<Order>();
-		orderDAO.findByVendorIdAndOrderStatus(vendor.getId(),"Recieved").forEach(vendorOrders::add);
+		//orderDAO.findByVendorIdAndOrderStatus(vendor.getId(),"Recieved").forEach(vendorOrders::add);
+		Iterator<Order> itr=orderDAO.findByVendorIdAndOrderStatus(vendor.getId(),"Recieved").iterator();
+		while(itr.hasNext()) {
+			vendorOrders.add(itr.next());
+		}
 		return vendorOrders;
 	}
 
@@ -88,7 +101,7 @@ public class VendorServiceImpl implements VendorService {
 	@Override
 	public String completeDelivery(int orderId) {
 		// TODO Auto-generated method stub
-		Order order=orderDAO.findById(orderId).get();
+		Order order=orderDAO.findOne(orderId);
 		order.setOrderStatus("Delivered");
 		orderDAO.save(order);
 		return "success";

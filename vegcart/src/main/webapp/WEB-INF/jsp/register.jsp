@@ -43,7 +43,7 @@
     <!-- End pushmenu -->
     <div class="wrappage">
         <header id="header" class="header-v3 header-v2">
-            <div id="topbar" class="topbar-ver2">
+           <!--  <div id="topbar" class="topbar-ver2">
                 <div class="container container-ver2">
                     <div class="inner-topbar box">
                         <div class="float-left">
@@ -57,12 +57,12 @@
                                     <li><a href="#" title="VND">REGISTER</a></li>
                                 </ul>
                             </div>
-                            <!-- End hover-menu -->
+                            End hover-menu
                         </div>
                     </div>
                 </div>
-                <!-- End container -->
-            </div>
+                End container
+            </div> -->
             <!-- End topbar -->
             <div class="header-top">
                 <div class="container container-ver2">
@@ -74,7 +74,7 @@
                         <div class="logo-mobile"><a href="#" title="Xanadu"><img src="assets/images/logo-v2.png" alt="Xanadu-Logo"></a></div>
 
                         <div class="box-right">
-                            <div class="cart hover-menu">
+                           <!--  <div class="cart hover-menu">
                                 <p class="icon-cart" title="Add to cart">
                                     <i class="icon"></i>
                                     <span class="cart-count">2</span>
@@ -109,7 +109,7 @@
                             </div>
                             <div class="search dropdown" data-toggle="modal" data-target=".bs-example-modal-lg">
                                 <i class="icon"></i>
-                            </div>
+                            </div> -->
                         </div>
                         <nav class="mega-menu">
                             <!-- Brand and toggle get grouped for better mobile display -->
@@ -181,8 +181,8 @@
             <div class="banner-header banner-lbook3 space-30">
                 <img src="assets/images/banner-product-checkout.jpg" alt="Banner-header">
                 <div class="text">
-                    <h3>Login/Register</h3>
-                    <p><a href="#" title="Home">Home</a><i class="fa fa-caret-right"></i>Login/Register</p>
+                    <h3>Register</h3>
+                    <p><a href="#" title="Home">Home</a><i class="fa fa-caret-right"></i>Register</p>
                 </div>
             </div>
         </div>
@@ -234,6 +234,12 @@
                                     <input class="form-control" type="text" placeholder="Enter Your Mobile" id="mobile" name="mobile">
                                 </div>
                                 
+                                
+                                 <div class="group box space-20">
+                                    <label class="control-label" for="inputemailres">Customer Name <span class="color">*</span></label>
+                                    <input class="form-control" type="text" placeholder="Enter Your Name" id="customerName" name="customerName">
+                                </div>
+                                
                                  <div class="group box space-20">
                                     <label class="control-label" for="inputemailres">Password <span class="color">*</span></label>
                                     <input class="form-control" type="password" placeholder="Enter Your Password" id="password" name="password">
@@ -246,9 +252,7 @@
                                 
                                 <div class="group box space-20">
                                     <label class="control-label" for="inputemailres">Delivery Address<span class="color">*</span></label>
-                                    <textarea rows="5" class="form-control" placeholder="Enter your Delivery Address..." id="deliveryAddress" name="deliveryAddress">
-                                    
-                                    </textarea>
+                                    <textarea placeholder="Enter your Delivery Address..." rows="5" class="form-control"  id="deliveryAddress" name="deliveryAddress"></textarea>
                                 </div>
                                 <input type="hidden" name="checkoutItems" value="${checkoutItems}">
                                 <button type="submit" class="link-v1 rt">Sign Up</button>

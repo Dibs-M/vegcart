@@ -32,10 +32,11 @@ public class AppController {
 	}
 	
 	@GetMapping("/logout")
-	public String getHomePage(HttpServletRequest request) {
+	public String getHomePage(Model model,HttpServletRequest request) {
 		HttpSession session=request.getSession();
 		session.removeAttribute("user");
 		session.invalidate();
+		model.addAttribute("vegetables", vendorService.getAllVendorProducts());
 		return "home";
 	}
 	

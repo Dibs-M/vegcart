@@ -47,11 +47,11 @@
                 <div class="container container-ver2">
                     <div class="inner-topbar box">
                         <div class="float-left">
-                            <p><h4>WELCOME,${user.mobile}</h4></p>
+                            <p><h6>WELCOME,${user.customerName}</h6></p>
                         </div>
                         <div class="float-right align-right">
                             <c:if test="${not empty user}">
-                              <a class="link-v1 rt" href="vendorlogout" title="checkout" >Logout</a>
+                              <a class="link-v1 rt" href="logout" title="logout" >Logout</a>
                               </c:if>
                             <!-- <div class="hover-menu">
                                 <a class="acc" href="#" title="USD"><img src="assets/images/icon-user-header.png" alt="icon">MY ACCOUNT</a>
@@ -77,7 +77,7 @@
                         <div class="logo-mobile"><a href="#" title="Xanadu"><img src="assets/images/logo-v2.png" alt="Xanadu-Logo"></a></div>
 
                         <div class="box-right">
-                            <div class="cart hover-menu">
+                            <!-- <div class="cart hover-menu">
                                 <p class="icon-cart" title="Add to cart">
                                     <i class="icon"></i>
                                     <span class="cart-count">2</span>
@@ -105,14 +105,14 @@
                                     </ul>
                                     <p class="total"><span class="left">Total:</span> <span class="right">$1121.98</span></p>
                                     <div class="bottom">
-                                       <!-- <a class="link-v1" href="#" title="viewcart">View Cart</a> -->
+                                       <a class="link-v1" href="#" title="viewcart">View Cart</a>
                                         <a class="link-v1 rt" href="checkout.html" title="checkout">Check out</a>
                                     </div>
                                 </div>
                             </div>
                             <div class="search dropdown" data-toggle="modal" data-target=".bs-example-modal-lg">
                                 <i class="icon"></i>
-                            </div>
+                            </div> -->
                         </div>
                         <nav class="mega-menu">
                             <!-- Brand and toggle get grouped for better mobile display -->

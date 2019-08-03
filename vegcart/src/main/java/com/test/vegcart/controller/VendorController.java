@@ -1,6 +1,5 @@
 package com.test.vegcart.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -15,9 +14,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.test.vegcart.entity.Customer;
 import com.test.vegcart.entity.Vendor;
 import com.test.vegcart.entity.VendorProducts;
+import com.test.vegcart.service.MasterService;
 import com.test.vegcart.service.VendorService;
 import com.test.vegcart.util.LoginUtil;
 
@@ -26,6 +25,9 @@ public class VendorController {
 	
 	@Autowired
 	VendorService vendorService;
+	
+	@Autowired
+	MasterService masterService;
 
 	@GetMapping("/vendorlogin")
 	public String vendorLogin() {
@@ -87,16 +89,40 @@ public class VendorController {
 		return result;
 	}
 	
-	@PostMapping("/addProduct")
-	public @ResponseBody String addProduct(@RequestBody VendorProducts vendorProducts) {
+	
+	@PostMapping("/vendororder")
+	public String vendorOrder(Model model,HttpServletRequest request) {
 		String result="fail";
+		Vendor vendor=LoginUtil.getLoginVendor(request);
+		model.addAttribute("vendororders", vendorService.getVendorOrders(vendor));
+		result="vendororder";
+		return result;
+	}
+	
+	
+	
+	@GetMapping("/addvendorproductp")
+	public String addVendorProduct(Model model) {
+		String result="vendoraddproduct";
+		model.addAttribute("masterproducts", masterService.getProducts());
+		model.addAttribute("masterunits", masterService.getUnits());
+		return result;
+	}
+	
+	@PostMapping("/addProduct")
+	public String addProduct(Model model,VendorProducts vendorProducts,HttpServletRequest request) {
+		String result="vendoraddproduct";
 		try {
+			Vendor vendor=LoginUtil.getLoginVendor(request);
+			vendorProducts.setVendorId(vendor.getId());
 			result=vendorService.addProduct(vendorProducts);
+			model.addAttribute("masterproducts", masterService.getProducts());
+			model.addAttribute("masterunits", masterService.getUnits());
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+		result="vendoraddproduct";
 		return result;
 	}
 

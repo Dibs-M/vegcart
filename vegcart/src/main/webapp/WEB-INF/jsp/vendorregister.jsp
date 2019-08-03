@@ -44,7 +44,7 @@
     <div class="wrappage">
         <header id="header" class="header-v3 header-v2">
             <div id="topbar" class="topbar-ver2">
-                <div class="container container-ver2">
+               <!--  <div class="container container-ver2">
                     <div class="inner-topbar box">
                         <div class="float-left">
                             <p><img src="assets/images/icon-phone-header.png.png" alt="icon"> Call us <span> 070-7782-9137</span></p>
@@ -57,10 +57,10 @@
                                     <li><a href="#" title="VND">REGISTER</a></li>
                                 </ul>
                             </div>
-                            <!-- End hover-menu -->
+                            End hover-menu
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <!-- End container -->
             </div>
             <!-- End topbar -->
@@ -73,7 +73,7 @@
                         </a></div>
                         <div class="logo-mobile"><a href="#" title="Xanadu"><img src="assets/images/logo-v2.png" alt="Xanadu-Logo"></a></div>
 
-                        <div class="box-right">
+                       <!--  <div class="box-right">
                             <div class="cart hover-menu">
                                 <p class="icon-cart" title="Add to cart">
                                     <i class="icon"></i>
@@ -110,7 +110,7 @@
                             <div class="search dropdown" data-toggle="modal" data-target=".bs-example-modal-lg">
                                 <i class="icon"></i>
                             </div>
-                        </div>
+                        </div> -->
                         <nav class="mega-menu">
                             <!-- Brand and toggle get grouped for better mobile display -->
                             <ul class="nav navbar-nav" id="navbar">

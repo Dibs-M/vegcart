@@ -13,7 +13,7 @@
         <link rel="shortcut icon" href="assets/images/favicon.png" />
         <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,500,700,300' rel='stylesheet' type='text/css'>
         <script type="text/javascript" src="assets/js/jquery-3.2.0.min.js"></script>
-        <title>Login Page</title>
+        <title>Registration</title>
     </head>
     <body>
     <div class="awe-page-loading">
@@ -44,6 +44,31 @@
     <div class="wrappage">
         <header id="header" class="header-v3 header-v2">
             <div id="topbar" class="topbar-ver2">
+            
+            <div class="container container-ver2">
+                    <div class="inner-topbar box">
+                        <div class="float-left">
+                            <p><h6>WELCOME,${loginvendor.vendorName}</h6></p>
+                        </div>
+                        <div class="float-right align-right">
+                            
+                            <div class="hover-menu">
+                                <a class="acc" href="#" title="Action"><img src="assets/images/icon-user-header.png" alt="icon">Action</a>
+                               <c:if test="${not empty loginvendor}">
+                                <ul class="list-menu">
+                                    <li style="width:90px"><a href="addvendorproductp" title="Add Product">Add Product</a></li>
+                                    <li style="width:90px"><a href="#" title="My Orders" onclick="openVendorOrderPage()">My Orders</a></li>
+                                </ul>
+                                </c:if>
+                            </div>
+                            <c:if test="${not empty loginvendor}">
+                             <a class="link-v1 rt" href="vendorlogout" title="vendor logout" >Logout</a>
+                            </c:if>
+                            
+                            <!-- End hover-menu -->
+                        </div>
+                    </div>
+                </div>
                <!--  <div class="container container-ver2">
                     <div class="inner-topbar box">
                         <div class="float-left">
@@ -51,7 +76,7 @@
                         </div>
                         <div class="float-right align-right">
                             <div class="hover-menu">
-                                <a class="acc" href="#" title="Action"><img src="assets/images/icon-user-header.png" alt="icon">Action</a>
+                                <a class="acc" href="#" title="USD"><img src="assets/images/icon-user-header.png" alt="icon">MY ACCOUNT</a>
                                 <ul class="list-menu">
                                     <li><a href="#" title="USD">LOGIN</a></li>
                                     <li><a href="#" title="VND">REGISTER</a></li>
@@ -73,7 +98,7 @@
                         </a></div>
                         <div class="logo-mobile"><a href="#" title="Xanadu"><img src="assets/images/logo-v2.png" alt="Xanadu-Logo"></a></div>
 
-                        <!-- <div class="box-right">
+                       <!--  <div class="box-right">
                             <div class="cart hover-menu">
                                 <p class="icon-cart" title="Add to cart">
                                     <i class="icon"></i>
@@ -190,10 +215,10 @@
         <div class="container container-ver2">
             <div class="page-login box space-50">
                 <div class="row">
-                 <div class="col-md-12 sign-in space-30">
+                  <!--   <div class="col-md-12 sign-in space-30">
                         <h3>sign in</h3>
                         <p>Hello, welcome to your account.</p>
-                         <!--   <div class="social space-30 box">
+                        <div class="social space-30 box">
                             <a class="float-left" href="#" title="facebook">
                                 <i class="fa fa-facebook"></i>
                                 SIGN IN WITH FACEBOOK
@@ -203,63 +228,78 @@
                                 SIGN IN WITH TWITTER
                             </a>
                         </div>
-                        End social -->
-                        <form class="form-horizontal" method="POST" action="loginvendor">
+                        End social
+                        <form class="form-horizontal" method="POST">
                             <div class="group box space-20">
                                 <label class="control-label" for="inputemail">Mobile <span class="color">*</span></label>
-                                <input class="form-control" type="text" placeholder="Mobile" id="vendorMobile" name="vendorMobile">
+                                <input class="form-control" type="text" placeholder="Your email" id="inputemail">
                             </div>
                             <div class="group box">
                                 <label class="control-label" for="inputemail">Password <span class="color">*</span></label>
-                                <input class="form-control" type="password" placeholder="Password" id="vendorPassword" name="vendorPassword"> 
+                                <input class="form-control" type="text" placeholder="Password" id="inputpass"> 
                             </div>
-                            <!-- <div class="remember">
+                            <div class="remember">
                                 <input id="remeber" type="checkbox" name="check" value="remeber">
                                 <label for="remeber" class="label-check">remember me!</label>
                                 <a class="help" href="#" title="help ?">Fogot your password?</a>   
-                            </div> -->
-                           <%--  <input type="hidden" name="checkoutItems" id="logincheckoutitems" value="${checkoutItems}">          --%>  
-                            <button type="submit" class="link-v1 rt" style="margin-top:10px;">LOGIN NOW</button>
-                            <a href="#" class="link-v1 rt" onclick="openVendorRegistrationForm();">REGISTER NOW</a>
+                            </div>           
+                            <button type="submit" class="link-v1 rt">LOGIN NOW</button>
+                            <a class="link-v1 rt" href="#" title="checkout" onclick="OpenRegis();">NEW USER</a>
                         </form>
-                        
-                     </div>
-                     
-                     <div class="col-md-12 sign-in space-30">
-                     <form action="vendorregisteration" id="vendorregisteration" class="form-horizontal" method="POST">
-                          <%-- <input type="hidden" name="checkoutitems" id="registercheckoutitems" value="${checkoutItems}"> --%>
-                          <!--  <button type="submit" class="link-v1 rt">REGISTER NOW</button> -->
-                        </form>
-                   </div>     
+                        End form
+                    </div> -->
                     <!-- End col-md-6 -->
-                    <%-- <div class="col-md-12" id="registrationdiv">
+                    <div class="col-md-12" id="registrationdiv">
                         <div class="register box space-50">
-                            <h3>Create A New Account</h3>
+                            <h3>Add Product</h3>
                            <!--  <p>Create your own Rimbus account.</p> -->
-                            <form class="form-horizontal" method="POST" action="addcustomer">
-                                <div class="group box space-20">
-                                    <label class="control-label" for="inputemailres">Mobile <span class="color">*</span></label>
-                                    <input class="form-control" type="text" placeholder="Enter Your Mobile" id="mobile" name="mobile">
-                                </div>
-                                
-                                 <div class="group box space-20">
-                                    <label class="control-label" for="inputemailres">Password <span class="color">*</span></label>
-                                    <input class="form-control" type="password" placeholder="Enter Your Password" id="password" name="password">
-                                </div>
-                                
-                                <div class="group box space-20">
-                                    <label class="control-label" for="inputemailres">Confirm Password <span class="color">*</span></label>
-                                    <input class="form-control" type="password" placeholder="Enter Your Password Again" id="cpassword" name="cpassword">
+                            <form class="form-horizontal" method="POST" action="addProduct">
+                            <c:set var="imagemapping" value=""/>
+                            <div class="group box space-20">
+                                    <label class="control-label" for="inputemailres">Product Name <span class="color">*</span></label>
+                                    <select id="productName" name="productName" class="form-control" onchange="fecthProductImage(this)" >
+                                    <option value="Select Product">Select Product</option>
+                                    <c:forEach items="${masterproducts}" var="product">
+                                    <option value="${product.productName}">${product.productName}</option>
+                                    <c:set var="imagemapping" value="${imagemapping}${product.productName}:${product.productImage}," />
+                                    </c:forEach>
+                                    </select>
+                                    <input type="hidden" value="${imagemapping}" id="productimagemapping">
                                 </div>
                                 
                                 <div class="group box space-20">
-                                    <label class="control-label" for="inputemailres">Delivery Address<span class="color">*</span></label>
-                                    <textarea rows="5" class="form-control" placeholder="Enter your Delivery Address..." id="deliveryAddress" name="deliveryAddress">
-                                    
-                                    </textarea>
+                                    <a href="#" title="" class="cart-product-image"><img id="product_image" src="" alt="Product" width="10%"></a>
+                                    <input type="hidden" name="productImage" id="productImage">
                                 </div>
-                                <input type="hidden" name="checkoutItems" value="${checkoutItems}">
-                                <button type="submit" class="link-v1 rt">Sign Up</button>
+                                
+                                
+                            
+                                <div class="group box space-20">
+                                    <label class="control-label" for="inputemailres">Product Price <span class="color">*</span></label>
+                                    <input class="form-control" type="text" placeholder="Enter Product Price" id="productPrice" name="productPrice">
+                                </div>
+                                
+                                <div class="group box space-20">
+                                    <label class="control-label" for="inputemailres">Product Quantity <span class="color">*</span></label>
+                                    <input class="form-control" type="text" placeholder="Enter Product Quantity" id="productStandardQuantity" name="productStandardQuantity">
+                                </div>
+                                
+                                <div class="group box space-20">
+                                    <label class="control-label" for="inputemailres">Product Unit <span class="color">*</span></label>
+                                    <select id="productUnit" name="productUnit" class="form-control">
+                                    <option value="Select Unit">Select Unit</option>
+                                    <c:forEach items="${masterunits}" var="unit">
+                                    <option value="${unit.unitName}">${unit.unitName}</option>
+                                    </c:forEach>
+                                    </select>
+                                </div>
+                                
+                                <div class="group box space-20">
+                                    <label class="control-label" for="inputemailres">Discount In Rupees <span class="color">*</span></label>
+                                    <input class="form-control" type="text" placeholder="Discount In Rupees" id="discount" name="discount">
+                                </div>
+                                 
+                                <button type="submit" class="link-v1 rt">Add Product</button>
                             </form>
                         </div>
                         <!-- End register -->
@@ -276,7 +316,7 @@
                                 </div>
                             </form>
                         </div> -->
-                    </div> --%>
+                    </div>
                     <!-- End col-md-6 -->
                 </div>
             </div>
@@ -377,7 +417,7 @@
     <script type="text/javascript" src="assets/js/jquery.mousewheel.min.js"></script>
     <script type="text/javascript" src="assets/js/slick.min.js"></script>
     <script type="text/javascript" src="assets/js/store.js"></script>
-    <script type="text/javascript" src="assets/js/registration.js"></script>
+    <script type="text/javascript" src="assets/js/vendorproduct.js"></script>
     
     </body>
         

@@ -47,19 +47,23 @@
                 <div class="container container-ver2">
                     <div class="inner-topbar box">
                         <div class="float-left">
-                            <p><h4>WELCOME,${loginvendor.vendorName}</h4></p>
+                            <p><h6>WELCOME,${loginvendor.vendorName}</h6></p>
                         </div>
                         <div class="float-right align-right">
-                            <c:if test="${not empty vendor}">
-                              <a class="link-v1 rt" href="vendorlogout" title="checkout" >Logout</a>
-                              </c:if>
-                            <!-- <div class="hover-menu">
-                                <a class="acc" href="#" title="USD"><img src="assets/images/icon-user-header.png" alt="icon">MY ACCOUNT</a>
+                            
+                            <div class="hover-menu">
+                                <a class="acc" href="#" title="Action"><img src="assets/images/icon-user-header.png" alt="icon">Action</a>
+                               <c:if test="${not empty loginvendor}">
                                 <ul class="list-menu">
-                                    <li><a href="#" title="USD">LOGIN</a></li>
-                                    <li><a href="#" title="VND">REGISTER</a></li>
+                                    <li style="width:90px"><a href="addvendorproductp" title="Add Product">Add Product</a></li>
+                                    <li style="width:90px"><a href="#" title="My Orders" onclick="openVendorOrderPage()">My Orders</a></li>
                                 </ul>
-                            </div> -->
+                                </c:if>
+                            </div>
+                            <c:if test="${not empty loginvendor}">
+                             <a class="link-v1 rt" href="vendorlogout" title="vendor logout" >Logout</a>
+                            </c:if>
+                            
                             <!-- End hover-menu -->
                         </div>
                     </div>
@@ -75,7 +79,9 @@
                             <img src="assets/images/logo-v2.png" alt="images">
                         </a></div>
                         <div class="logo-mobile"><a href="#" title="Xanadu"><img src="assets/images/logo-v2.png" alt="Xanadu-Logo"></a></div>
-
+                          <form action="vendororder" method="post" id="vendororderform">
+                          
+                          </form>
                        <!--  <div class="box-right">
                             <div class="cart hover-menu">
                                 <p class="icon-cart" title="Add to cart">

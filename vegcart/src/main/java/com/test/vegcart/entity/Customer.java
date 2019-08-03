@@ -23,6 +23,9 @@ public class Customer {
 	@Column(name="delivery_address")
 	private String deliveryAddress;
 	
+	@Column(name="customer_name")
+	private String customerName;
+	
 	@Transient
 	private String checkoutItems;
 
@@ -65,5 +68,14 @@ public class Customer {
 	public void setCheckoutItems(String checkoutItems) {
 		this.checkoutItems = checkoutItems;
 	}
+
+	public String getCustomerName() {
+		return customerName;
+	}
+
+	public void setCustomerName(String customerName) {
+		this.customerName = customerName;
+	}
+	
 	
 }

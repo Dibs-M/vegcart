@@ -1,6 +1,8 @@
 package com.test.vegcart.service.impl;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -69,14 +71,21 @@ public class CustomerServiceImpl implements CustomerService {
 	@Override
 	public Customer getCustomerByMobile(Customer customer) throws Exception {
 		// TODO Auto-generated method stub
-		return customerDAO.findById(customer.getMobile()).get();
+		
+		Iterator<Customer> itr=customerDAO.findAll(Arrays.asList(customer.getMobile())).iterator();
+		Customer customer1=null;
+		while(itr.hasNext()) {
+			customer1=itr.next();
+		}
+		//return customerDAO.findById(customer.getMobile());
+		return customer1;
 	}
 
 	@Transactional
 	@Override
 	public String placeOrders(List<Order> orders) {
 		// TODO Auto-generated method stub
-		orderDAO.saveAll(orders);
+		orderDAO.save(orders);
 		return "success";
 	}
 
@@ -84,7 +93,11 @@ public class CustomerServiceImpl implements CustomerService {
 	public List<Order> getCustomerOrders(Customer customer) {
 		// TODO Auto-generated method stub
 		List<Order> orderList=new ArrayList<Order>();
-		orderDAO.findByCustomerMobile(customer.getMobile()).forEach(orderList::add);
+		//orderDAO.findByCustomerMobile(customer.getMobile()).forEach(orderList::add);
+		Iterator<Order> itr=orderDAO.findByCustomerMobile(customer.getMobile()).iterator();
+		while(itr.hasNext()) {
+			orderList.add(itr.next());
+		}
 		return orderList;
 	}
 

@@ -44,7 +44,7 @@
     <div class="wrappage">
         <header id="header" class="header-v3 header-v2">
             <div id="topbar" class="topbar-ver2">
-                <div class="container container-ver2">
+               <!--  <div class="container container-ver2">
                     <div class="inner-topbar box">
                         <div class="float-left">
                             <p><img src="assets/images/icon-phone-header.png.png" alt="icon"> Call us <span> 070-7782-9137</span></p>
@@ -57,10 +57,10 @@
                                     <li><a href="#" title="VND">REGISTER</a></li>
                                 </ul>
                             </div>
-                            <!-- End hover-menu -->
+                            End hover-menu
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <!-- End container -->
             </div>
             <!-- End topbar -->
@@ -74,7 +74,7 @@
                         <div class="logo-mobile"><a href="#" title="Xanadu"><img src="assets/images/logo-v2.png" alt="Xanadu-Logo"></a></div>
 
                         <div class="box-right">
-                            <div class="cart hover-menu">
+                            <!-- <div class="cart hover-menu">
                                 <p class="icon-cart" title="Add to cart">
                                     <i class="icon"></i>
                                     <span class="cart-count">2</span>
@@ -109,7 +109,7 @@
                             </div>
                             <div class="search dropdown" data-toggle="modal" data-target=".bs-example-modal-lg">
                                 <i class="icon"></i>
-                            </div>
+                            </div> -->
                         </div>
                         <nav class="mega-menu">
                             <!-- Brand and toggle get grouped for better mobile display -->
@@ -182,7 +182,7 @@
                 <img src="assets/images/banner-product-checkout.jpg" alt="Banner-header">
                 <div class="text">
                     <h3>Login/Register</h3>
-                    <p><a href="#" title="Home">Home</a><i class="fa fa-caret-right"></i>Login/Register</p>
+                    <p><a href="#" title="Home">Home</a><i class="fa fa-caret-right"></i>Login</p>
                 </div>
             </div>
         </div>
@@ -218,17 +218,18 @@
                                 <label for="remeber" class="label-check">remember me!</label>
                                 <a class="help" href="#" title="help ?">Fogot your password?</a>   
                             </div> -->
+                            <br>
                             <input type="hidden" name="checkoutItems" id="logincheckoutitems" value="${checkoutItems}">           
-                            <button type="submit" class="link-v1 rt">LOGIN NOW</button>
+                            <button type="submit" class="link-v1 rt" style="margin-top:10px;">LOGIN NOW</button>
+                            <a href="#" class="link-v1 rt" onclick="openRegistrationForm();">REGISTER NOW</a>
                             
                         </form>
                         
                      </div>
                      
                      <div class="col-md-12 sign-in space-30">
-                     <form action="registercustomer" class="form-horizontal" method="POST">
+                     <form action="registercustomer" class="form-horizontal" method="POST" id="registrationform">
                           <input type="hidden" name="checkoutitems" id="registercheckoutitems" value="${checkoutItems}">
-                           <button type="submit" class="link-v1 rt">REGISTER NOW</button>
                         </form>
                    </div>     
                     <!-- End col-md-6 -->

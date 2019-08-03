@@ -6,11 +6,11 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 
 @SpringBootApplication
-public class VegcartApplication {
+public class VegcartApplication2 {
 //public class VegcartApplication  extends SpringBootServletInitializer {	
 
 	public static void main(String[] args) {
-		SpringApplication.run(VegcartApplication.class, args);
+		SpringApplication.run(VegcartApplication2.class, args);
 	}
 	//commiting code
 	/*@Override

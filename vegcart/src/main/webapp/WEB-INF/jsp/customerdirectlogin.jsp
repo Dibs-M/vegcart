@@ -51,7 +51,7 @@
                         </div>
                         <div class="float-right align-right">
                             <div class="hover-menu">
-                                <a class="acc" href="#" title="Action"><img src="assets/images/icon-user-header.png" alt="icon">Action</a>
+                                <a class="acc" href="#" title="USD"><img src="assets/images/icon-user-header.png" alt="icon">MY ACCOUNT</a>
                                 <ul class="list-menu">
                                     <li><a href="#" title="USD">LOGIN</a></li>
                                     <li><a href="#" title="VND">REGISTER</a></li>
@@ -73,8 +73,8 @@
                         </a></div>
                         <div class="logo-mobile"><a href="#" title="Xanadu"><img src="assets/images/logo-v2.png" alt="Xanadu-Logo"></a></div>
 
-                        <!-- <div class="box-right">
-                            <div class="cart hover-menu">
+                        <div class="box-right">
+                            <!-- <div class="cart hover-menu">
                                 <p class="icon-cart" title="Add to cart">
                                     <i class="icon"></i>
                                     <span class="cart-count">2</span>
@@ -109,8 +109,8 @@
                             </div>
                             <div class="search dropdown" data-toggle="modal" data-target=".bs-example-modal-lg">
                                 <i class="icon"></i>
-                            </div>
-                        </div> -->
+                            </div> -->
+                        </div>
                         <nav class="mega-menu">
                             <!-- Brand and toggle get grouped for better mobile display -->
                             <ul class="nav navbar-nav" id="navbar">
@@ -182,7 +182,7 @@
                 <img src="assets/images/banner-product-checkout.jpg" alt="Banner-header">
                 <div class="text">
                     <h3>Login/Register</h3>
-                    <p><a href="#" title="Home">Home</a><i class="fa fa-caret-right"></i>Login/Register</p>
+                    <p><a href="#" title="Home">Home</a><i class="fa fa-caret-right"></i>Login</p>
                 </div>
             </div>
         </div>
@@ -204,31 +204,32 @@
                             </a>
                         </div>
                         End social -->
-                        <form class="form-horizontal" method="POST" action="loginvendor">
+                        <form class="form-horizontal" method="POST" action="logindirectcustomer">
                             <div class="group box space-20">
                                 <label class="control-label" for="inputemail">Mobile <span class="color">*</span></label>
-                                <input class="form-control" type="text" placeholder="Mobile" id="vendorMobile" name="vendorMobile">
+                                <input class="form-control" type="text" placeholder="Mobile" id="mobile" name="mobile">
                             </div>
                             <div class="group box">
                                 <label class="control-label" for="inputemail">Password <span class="color">*</span></label>
-                                <input class="form-control" type="password" placeholder="Password" id="vendorPassword" name="vendorPassword"> 
+                                <input class="form-control" type="password" placeholder="Password" id="password" name="password"> 
                             </div>
                             <!-- <div class="remember">
                                 <input id="remeber" type="checkbox" name="check" value="remeber">
                                 <label for="remeber" class="label-check">remember me!</label>
                                 <a class="help" href="#" title="help ?">Fogot your password?</a>   
                             </div> -->
-                           <%--  <input type="hidden" name="checkoutItems" id="logincheckoutitems" value="${checkoutItems}">          --%>  
+                            <br>
+                            <input type="hidden" name="checkoutItems" id="logincheckoutitems" value="${checkoutItems}">           
                             <button type="submit" class="link-v1 rt" style="margin-top:10px;">LOGIN NOW</button>
-                            <a href="#" class="link-v1 rt" onclick="openVendorRegistrationForm();">REGISTER NOW</a>
+                            <a href="#" class="link-v1 rt" onclick="openRegistrationForm();">REGISTER NOW</a>
+                            
                         </form>
                         
                      </div>
                      
                      <div class="col-md-12 sign-in space-30">
-                     <form action="vendorregisteration" id="vendorregisteration" class="form-horizontal" method="POST">
-                          <%-- <input type="hidden" name="checkoutitems" id="registercheckoutitems" value="${checkoutItems}"> --%>
-                          <!--  <button type="submit" class="link-v1 rt">REGISTER NOW</button> -->
+                     <form action="registercustomer" class="form-horizontal" method="POST" id="registrationform">
+                          <input type="hidden" name="checkoutitems" id="registercheckoutitems" value="${checkoutItems}">
                         </form>
                    </div>     
                     <!-- End col-md-6 -->

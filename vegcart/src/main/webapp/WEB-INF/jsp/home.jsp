@@ -50,23 +50,24 @@
                 <div class="inner-topbar box">
                 <c:if test="${not empty user}">
                 <div class="float-left">
-                <h4 class="title-brand">Welcome,${user.mobile}</h4>
+                <h6 class="title-brand">Welcome,${user.customerName}</h6>
                 </div>
                 
                 </c:if>
                 
                 <div class="float-right align-right">
                             <div class="hover-menu">
-                                <a class="acc" href="#" title="USD"><img src="assets/images/icon-user-header.png" alt="icon">Action</a>
+                                <a class="acc" href="#" title="Action"><img src="assets/images/icon-user-header.png" alt="icon">Action</a>
                                 <ul class="list-menu">
-                                    <li  style="width:50px"><a href="vendorlogin" title="Vendor Login">Vendor LOGIN</a></li>
+                                    <li  style="width:90px"><a href="vendorlogin" title="Vendor Login">Vendor Login</a></li>
+                                    <li  style="width:90px"><a href="custonmerdirectlogin" title="Customer Login">Customer Login</a></li>
                                     <c:if test="${not empty user}">
-                                    <li  style="width:50px"><a href="customerorders" title="My Order">My Orders</a></li>
+                                    <li  style="width:90px"><a href="customerorders" title="My Order">My Orders</a></li>
                                     </c:if>
                                 </ul>
                             </div>
                             <c:if test="${not empty user}">
-                             <a class="link-v1 rt" href="logout" title="checkout" >Logout</a>
+                             <a class="link-v1 rt" href="logout" title="logout" >Logout</a>
                              </c:if>
                             <!-- End hover-menu -->
                 </div>
@@ -80,7 +81,7 @@
                             <img src="assets/images/logo-v1.png" alt="images">
                         </a>
                     </div>
-                    <div class="float-right align-right">
+                    <div class="float-right align-right" style="margin-right: 20px;">
                         <div class="box-right">
                             <div class="cart hover-menu">
                                 <p class="icon-cart" title="Add to cart">
@@ -201,16 +202,16 @@
         </div>
         <!-- End header-top -->
     </header><!-- /header -->
-    <div class="container container-ver2" style="height:50%">
+    <!-- <div class="container container-ver2" style="height:50%">
         <div class="tp-banner-container ver4">
         <div class="tp-banner" >
-            <ul>    <!-- SLIDE  -->
-                <!-- SLIDE  -->
+            <ul>    SLIDE 
+                SLIDE 
                 <li data-transition="random" data-slotamount="6" data-masterspeed="1000" >
-                    <!-- MAIN IMAGE -->
+                    MAIN IMAGE
                     <img src="assets/images/home4-slideshow2.jpg"  alt="Futurelife-home2-slideshow"  data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
 
-                    <!-- LAYER NR. 9 -->
+                    LAYER NR. 9
                     <div class="tp-caption color-white skewfromleft customout font-play tp-resizeme size-50 bg-brand uppercase"
                          data-x="445"
                          data-y="209"
@@ -224,7 +225,7 @@
                          style="z-index: 3">Save 30%
                     </div>
 
-                    <!-- LAYER NR. 3 -->
+                    LAYER NR. 3
                     <div class="tp-caption font-ros weight-400 skewfromleft customout size-28 bg-white"
                          data-x="247"
                          data-y="280"
@@ -238,13 +239,13 @@
                          style="z-index: 4">When buying seasonal veggies and fruits...
                     </div>
                 </li>
-                <!-- SLIDER -->
-                <!-- SLIDE  -->
+                SLIDER
+                SLIDE 
                 <li data-transition="random" data-slotamount="6" data-masterspeed="1000" >
-                    <!-- MAIN IMAGE -->
+                    MAIN IMAGE
                     <img src="assets/images/home4-slideshow1.jpg"  alt="Futurelife-home2-slideshow"  data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
 
-                    <!-- LAYER NR. 9 -->
+                    LAYER NR. 9
                     <div class="tp-caption color-white skewfromleft customout font-play tp-resizeme size-50 bg-brand"
                          data-x="550"
                          data-y="220"
@@ -258,7 +259,7 @@
                          style="z-index: 3">Order Home Delivery!
                     </div>
 
-                    <!-- LAYER NR. 3 -->
+                    LAYER NR. 3
                     <div class="tp-caption font-ros weight-400 skewfromleft customout size-20 bg-white"
                          data-x="680"
                          data-y="290"
@@ -272,12 +273,12 @@
                          style="z-index: 4">We offer a regular delivery schedule...
                     </div>
                 </li>
-                <!-- SLIDER -->
+                SLIDER
             </ul>
             <div class="tp-bannertimer"></div>
         </div>
     </div>
-    </div>
+    </div> -->
    
    
    <div class="container">

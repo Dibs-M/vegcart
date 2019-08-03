@@ -45,17 +45,17 @@
                 <div class="container container-ver2">
                     <div class="inner-topbar box">
                         <div class="float-left">
-                            <p><img src="assets/images/icon-phone-header.png.png" alt="icon"> Call us <span> 070-7782-9137</span><span><h3 class="title-brand">Welcome,${user.mobile}</h3></span></p>
+                            <p><span><h6 class="title-brand">Welcome,${user.customerName}</h6></span></p>
                         </div>
                         <div class="float-right align-right">
-                            <div class="hover-menu">
+                            <!-- <div class="hover-menu">
                                 <a class="acc" href="#" title="USD"><img src="assets/images/icon-user-header.png" alt="icon">MY ACCOUNT</a>
                                 <ul class="list-menu">
                                     <li><a href="#" title="USD">LOGIN</a></li>
                                     <li><a href="#" title="VND">REGISTER</a></li>
                                 </ul>
-                            </div>
-                            <a class="link-v1 rt" href="logout" title="checkout" >Logout</a>
+                            </div> -->
+                            <a class="link-v1 rt" href="logout" title="logout" >Logout</a>
                             <!-- End hover-menu -->
                         </div>
                     </div>
@@ -74,10 +74,10 @@
 
                         <div class="box-right">
                             <div class="cart hover-menu">
-                                    <p class="icon-cart" title="Add to cart">
+                                   <!--  <p class="icon-cart" title="Add to cart">
                                         <i class="icon"></i>
                                         <span class="cart-count">2</span>
-                                    </p>
+                                    </p> -->
                                     <div class="cart-list list-menu">
                                         <ul class="list">
                                             <li>
@@ -106,9 +106,9 @@
                                         </div>
                                     </div>
                                 </div>
-                            <div class="search dropdown" data-toggle="modal" data-target=".bs-example-modal-lg">
+                            <!-- <div class="search dropdown" data-toggle="modal" data-target=".bs-example-modal-lg">
                                 <i class="icon"></i>
-                            </div>
+                            </div> -->
                         </div>
                         <nav class="mega-menu">
                             <!-- Brand and toggle get grouped for better mobile display -->
@@ -171,7 +171,7 @@
                     </div>
                 </div>
             </div>
-            <div class="container container-ver2 space-padding-tb-30">
+           <!--  <div class="container container-ver2 space-padding-tb-30">
                 <div class="row head-cart">
                     <div class="col-md-4 space-30">
                         <div class="item active center">
@@ -179,23 +179,23 @@
                             <h3>Shopping cart</h3>
                         </div>
                     </div>
-                    <!-- End col-md-4 -->
+                    End col-md-4
                     <div class="col-md-4 space-30">
                         <div class="item active center">
                             <p class="icon">02</p>
                             <h3>Check out</h3>
                         </div>
                     </div>
-                    <!-- End col-md-4 -->
+                    End col-md-4
                     <div class="col-md-4 space-30">
                         <div class="item center active">
                             <p class="icon">03</p>
                             <h3>Order completed</h3>
                         </div>
                     </div>
-                    <!-- End col-md-4 -->
+                    End col-md-4
                 </div>
-            </div>
+            </div> -->
             <!-- End container -->
             <div class="container container-ver2">
                 <div class="box float-left order-complete center space-50">

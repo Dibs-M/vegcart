@@ -79,6 +79,13 @@ public class CustomerController {
 	}
 	
 	
+	@GetMapping("/custonmerdirectlogin")
+	public String customerDirectLogin() {
+		String result="customerdirectlogin";
+		return result;
+	}
+	
+	
 	@PostMapping("/registercustomer")
 	public String register(Model model,@RequestParam("checkoutitems")String checkoutItems) {
 		model.addAttribute("checkoutItems", checkoutItems);
@@ -117,6 +124,34 @@ public class CustomerController {
 		
 		return result;
 	}
+	
+	
+	@PostMapping("/logindirectcustomer")
+	public String loginDirectUser(Model model,@ModelAttribute Customer customer,HttpServletRequest request) {
+		String result="fail";
+		try {
+			Customer rcustomer=customerService.getCustomerByMobile(customer);
+			if(null!=rcustomer && rcustomer.getPassword().equals(customer.getPassword())) {
+				customer=rcustomer;
+				result="success";
+			}
+			
+			LoginUtil.setLoginUser(request, customer);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		if(result.equals("success")) {
+			model.addAttribute("vegetables", vendorService.getAllVendorProducts());
+			result="home";
+		}else {
+			result="login";
+		}
+		
+		return result;
+	}
+	
 	
 	
 	@PostMapping("/additemincart")

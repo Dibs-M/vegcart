@@ -3,3 +3,8 @@ function completeVendorOrder(id){
 	$('#deliveryform').submit();
 	
 }
+
+
+function openVendorOrderPage(){
+	$('#vendororderform').submit();
+}

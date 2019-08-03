@@ -47,17 +47,17 @@
                 <div class="container container-ver2">
                     <div class="inner-topbar box">
                         <div class="float-left">
-                            <p><img src="assets/images/icon-phone-header.png.png" alt="icon"> Call us <span> 070-7782-9137</span><span><h3 class="title-brand">Welcome,${user.mobile}</h3></span></p>
+                            <p><!-- <img src="assets/images/icon-phone-header.png.png" alt="icon">  --><span><h6 class="title-brand">Welcome,${user.customerName}</h6></span></p>
                         </div>
                         <div class="float-right align-right">
-                            <div class="hover-menu">
+                            <!-- <div class="hover-menu">
                                 <a class="acc" href="#" title="USD"><img src="assets/images/icon-user-header.png" alt="icon">MY ACCOUNT</a>
                                 <ul class="list-menu">
                                     <li><a href="#" title="USD">LOGIN</a></li>
                                     <li><a href="#" title="VND">REGISTER</a></li>
                                 </ul>
-                            </div>
-                             <a class="link-v1 rt" href="logout" title="checkout" >Logout</a>
+                            </div> -->
+                             <a class="link-v1 rt" href="logout" title="logout" >Logout</a>
                             <!-- End hover-menu -->
                         </div>
                        
@@ -172,31 +172,31 @@
                     <p><a href="#" title="Home">Home</a><i class="fa fa-caret-right"></i>Checkout</p>
                 </div>
             </div>
-            <div class="container container-ver2 space-padding-tb-30">'
+            <!-- <div class="container container-ver2 space-padding-tb-30">'
                     <div class="row head-cart" align="center" >
-                       <!--  <div class="col-md-4 space-30">
+                        <div class="col-md-4 space-30">
                             <div class="item active center">
                                 <p class="icon">01</p>
                                 <h3>Shopping cart</h3>
                             </div>
-                        </div> -->
-                        <!-- End col-md-4 -->
+                        </div>
+                        End col-md-4
                         <div class="col-md-4 space-30">
                             <div class="item active center">
-                                <!-- <p class="icon">02</p> -->
+                                <p class="icon">02</p>
                                 <p class="icon"></p>
                                 <h3>Check out</h3>
                             </div>
                         </div>
-                        <!-- End col-md-4 -->
-                       <!--  <div class="col-md-4 space-30">
+                        End col-md-4
+                        <div class="col-md-4 space-30">
                             <div class="item center">
                                 <p class="icon">03</p>
                                 <h3>Order completed</h3>
-                            </div> -->
+                            </div>
                         </div>
-                        <!-- End col-md-4 -->
-                    </div>
+                        End col-md-4
+                    </div> -->
                 </div>
                 <!-- End container -->
             <div class="cart-box-container check-out">
@@ -269,8 +269,8 @@
                         </div> -->
                         <!-- End col-md-8 -->
                         <div class="col-md-6 space-30">
-                            <div class="box">
-                                <h3 class="title-brand">YOUR ORDER</h3>
+                            <div class="box" style="margin-left: 45%;">
+                                <h5 class="title-brand">YOUR ORDER</h5>
                                 <div class="info-order">
                                     <div class="product-name">
                                         <ul>
