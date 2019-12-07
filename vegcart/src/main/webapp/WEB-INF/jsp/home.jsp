@@ -59,6 +59,8 @@
                             <div class="hover-menu">
                                 <a class="acc" href="#" title="Action"><img src="assets/images/icon-user-header.png" alt="icon">Action</a>
                                 <ul class="list-menu">
+                                    <li  style="width:90px"><a href="vendorlogin" title="Admin Login">Admin Login</a></li>
+                                    <li  style="width:90px"><a href="vendorlogin" title="Partner Login">Partner Login</a></li>
                                     <li  style="width:90px"><a href="vendorlogin" title="Vendor Login">Vendor Login</a></li>
                                     <li  style="width:90px"><a href="custonmerdirectlogin" title="Customer Login">Customer Login</a></li>
                                     <c:if test="${not empty user}">
@@ -147,14 +149,14 @@
             <!-- End container -->
         </div>
         <!-- End topbar -->
-        <div class="header-top">
+     <!--   <div class="header-top">
             <div class="container container-ver2">
                 <div class="box">
                     <p class="icon-menu-mobile"><i class="fa fa-bars" ></i></p>
                     <div class="logo-mobile"><a href="#" title="Xanadu"><img src="assets/images/logo-v2.png" alt="Xanadu-Logo"></a></div>
                     <nav class="mega-menu">
                         <!-- Brand and toggle get grouped for better mobile display -->
-                        <ul class="nav navbar-nav" id="navbar">
+                      <!--  <ul class="nav navbar-nav" id="navbar">
                             <li class="level1 active dropdown"><a href="#/vegetables_catalog" title="Vegetables">Vegetables</a>
                                 <ul class="menu-level-1 dropdown-menu">
                                     <li class="level2"><a href="#/vegetables_catalog" title="Vegetables 1">Fresh Vegetables</a></li>
@@ -162,17 +164,17 @@
                                     
                                 </ul>
                             </li>
-							<li class="level1 active dropdown"><a href="./fruit_catalog.html" title="Fruit">Fruit</a>
+							<li class="level1 active dropdown"><a href="#/fruit_catalog" title="Fruit">Fruit</a>
                                 <ul class="menu-level-1 dropdown-menu">
-                                    <li class="level2"><a href="./fruit_catalog.html" title="Fruit 1">Fresh Fruit</a></li>
+                                    <li class="level2"><a href="#/fruit_catalog" title="Fruit 1">Fresh Fruit</a></li>
                                     <li class="level2"><a href="./fruit_catalog.html" title="Fruit 2">Cut Fruit</a></li>
                                     
                                 </ul>
                             </li>
 							<li class="level1 active dropdown"><a href="./beverages_catalog.html" title="Beverages">Beverages</a>
                                 <ul class="menu-level-1 dropdown-menu">
-                                    <li class="level2"><a href="./beverages_catalog.html" title="Beverages 1">Juices</a></li>
-                                    <li class="level2"><a href="./beverages_catalog.html" title="Beverages 2">Soft Drinks</a></li>
+                                    <li class="level2"><a href="#/beverages_catalog.html" title="Beverages 1">Water</a></li>
+                                     <li class="level2"><a href="./beverages_catalog.html" title="Beverages 2">Soft Drinks</a></li>
 									<li class="level2"><a href="./beverages_catalog.html" title="Beverages 2">Water</a></li>
 									<li class="level2"><a href="./beverages_catalog.html" title="Beverages 2">Soda</a></li>
 									<li class="level2"><a href="./beverages_catalog.html" title="Beverages 2">Instant Drink Mix</a></li>
@@ -180,10 +182,11 @@
 									
                                 </ul>
                             </li>
-							<li class="level1 active dropdown"><a href="./frozen_food_catalog.html" title="Beverages">Frozen  Food</a>
+							<li class="level1 active dropdown"><a href="./frozen_food_catalog.html" title="Beverages">Milk</a>
                                 <ul class="menu-level-1 dropdown-menu">
-                                    <li class="level2"><a href="./frozen_food_catalog.html" title="Beverages 1">Frozen Veg</a></li>
-                                    <li class="level2"><a href="./frozen_food_catalog.html" title="Beverages 2">Frozen Non-Veg</a></li>
+                                    <li class="level2"><a href="./frozen_food_catalog.html" title="Beverages 1">Amul Full Cream</a></li>
+                                    <li class="level2"><a href="./frozen_food_catalog.html" title="Beverages 2">Amul Tonned</a></li>
+                                    <li class="level2"><a href="./frozen_food_catalog.html" title="Beverages 2">Amul Double Tonned</a></li>
                                 </ul>
                             </li>
 							<li class="level1 active dropdown"><a href="./meats_frozen_seafood_catalog.html" title="Beverages">meats-frozen-seafood</a>
@@ -199,7 +202,7 @@
                 </div>
             </div>
             <!-- End container -->
-        </div>
+       <!-- </div> -->
         <!-- End header-top -->
     </header><!-- /header -->
     <!-- <div class="container container-ver2" style="height:50%">
@@ -283,6 +286,7 @@
    
    <div class="container">
                 <div class="featured-products home_2 new-arrivals lastest">
+				<!--
                     <ul class="tabs tabs-title">
 					    <li class="item" rel="tab_1">Vegetables</li>
                         <li class="item" rel="tab_2">Fruits</li>
@@ -290,6 +294,43 @@
                         <li class="item" rel="tab_3">Beverages</li>                       
 					   <li class="item" rel="tab_5">Meat</li>
                     </ul>
+					-->
+					 <ul class="tabs tabs-title" >
+                            <li class="item"  rel="tab_1">Vegetables
+                                
+                            </li>
+							<li class="item" rel="tab_2">Fruit
+                               
+                            </li>
+							<li class="item" rel="tab_3">Water
+                             <!--    <ul class="menu-level-1 dropdown-menu">
+                                    <li class="level2"><a href="#/beverages_catalog.html" title="Beverages 1">Water</a></li>
+                                  <!--   <li class="level2"><a href="./beverages_catalog.html" title="Beverages 2">Soft Drinks</a></li>
+									<li class="level2"><a href="./beverages_catalog.html" title="Beverages 2">Water</a></li>
+									<li class="level2"><a href="./beverages_catalog.html" title="Beverages 2">Soda</a></li>
+									<li class="level2"><a href="./beverages_catalog.html" title="Beverages 2">Instant Drink Mix</a></li>
+                                    <li class="level2"><a href="./beverages_catalog.html" title="Beverages 2">Energy Drinks</a></li>
+									
+                                </ul>-->
+                            </li>
+							<li class="item" rel="tab_4">Milk
+							<li class="item"  rel="tab_4">Dry Fruits
+                               <!-- <ul class="menu-level-1 dropdown-menu">
+                                    <li class="level2"><a href="./frozen_food_catalog.html" title="Beverages 1">Amul Full Cream</a></li>
+                                    <li class="level2"><a href="./frozen_food_catalog.html" title="Beverages 2">Amul Tonned</a></li>
+                                    <li class="level2"><a href="./frozen_food_catalog.html" title="Beverages 2">Amul Double Tonned</a></li>
+                                </ul>-->
+                            </li>
+						<!--	<li class="level1 active dropdown"><a href="./meats_frozen_seafood_catalog.html" title="Beverages">meats-frozen-seafood</a>
+                                <ul class="menu-level-1 dropdown-menu">
+                                    <li class="level2"><a href="./meats_frozen_seafood_catalog.html" title="Beverages 1">Eggs</a></li>
+                                    <li class="level2"><a href="./meats_frozen_seafood_catalog.html" title="Beverages 2">chicken</a></li>
+									<li class="level2"><a href="./meats_frozen_seafood_catalog.html" title="Beverages 2">meat</a></li>
+									<li class="level2"><a href="./meats_frozen_seafood_catalog.html" title="Beverages 2">seafoods</a></li>
+                                </ul>
+                            </li>-->
+                        </ul>
+						
                     <div class="tab-container space-10">
                         <div id="tab_1" class="tab-content">
                             <div class="products hover-shadow ver2 border-space-product">
@@ -1286,7 +1327,7 @@
 
             </div>
 			
-			
+	<!--		
 			
 			 <div class="container container-ver2 banner-home4">
         <div class="catbox-container home-4">
@@ -1302,9 +1343,9 @@
                     </div>
                 </div>
                
-            </div>
+            </div>-->
             <!--End col-md-4-->
-            <div class="col-md-4 col-sm-4">
+        <!--    <div class="col-md-4 col-sm-4">
                 <div class="items">
                     <div class="hover-images">
                         <img src="assets/images/catbox-hom4-2.jpg" alt="banner">
@@ -1315,9 +1356,9 @@
                     </div>
                 </div>
                 <!--End items-->
-            </div>
+           <!-- </div>-->
             <!--End col-md-4-->
-            <div class="col-md-4 col-sm-4">
+            <!-- <div class="col-md-4 col-sm-4">
                 <div class="items">
                     <div class="hover-images">
                         <img src="assets/images/catbox-hom4-4.jpg" alt="banner">
@@ -1331,13 +1372,13 @@
             </div>
 			
             <!--End col-md-4-->
+      <!--  </div>
         </div>
-        </div>
-    </div>
+    </div>-->
    
 	
 	
-    <div class="container container-ver2">
+    <!--<div class="container container-ver2">
         
         <div class="featured-products">
             <ul class="tabs tabs-title">
@@ -1361,6 +1402,7 @@
 
                         </div>
                         <!-- End item -->
+						<!--
                         <div class="product">
                             <div class="product-images">
                                 <a href="#" title="product-images">
@@ -1373,6 +1415,7 @@
                             <p class="product-price"> INR 350.00</p>
                         </div>
                         <!-- End item -->
+						<!--
                         <div class="product">
                             <div class="product-images">
                                 <a href="#" title="product-images">
@@ -1386,6 +1429,7 @@
 
                         </div>
                         <!-- End item -->
+						<!--
                         <div class="product">
                             <div class="product-images">
                                 <a href="#" title="product-images">
@@ -1399,6 +1443,7 @@
 
                         </div>
                         <!-- End item -->
+						<!--
                         <div class="product">
                             <div class="product-images">
                                 <a href="#" title="product-images">
@@ -1412,6 +1457,7 @@
 
                         </div>
                         <!-- End item -->
+						<!--
                         <div class="product">
                             <div class="product-images">
                                 <a href="#" title="product-images">
@@ -1425,6 +1471,7 @@
 
                         </div>
                         <!-- End item -->
+							<!--
                         <div class="product">
                             <div class="product-images">
                                 <a href="#" title="product-images">
@@ -1438,6 +1485,7 @@
 
                         </div>
                         <!-- End item -->
+							<!--
                         <div class="product">
                             <div class="product-images">
                                 <a href="#" title="product-images">
@@ -1450,6 +1498,7 @@
                             <p class="product-price"> INR 350.00</p>
                         </div>
                         <!-- End item -->
+							<!--
                         <div class="product">
                             <div class="product-images">
                                 <a href="#" title="product-images">
@@ -1463,6 +1512,7 @@
 
                         </div>
                         <!-- End item -->
+							<!--
                         <div class="product">
                             <div class="product-images">
                                 <a href="#" title="product-images">
@@ -1476,6 +1526,7 @@
 
                         </div>
                         <!-- End item -->
+							<!--
                         <div class="product">
                             <div class="product-images">
                                 <a href="#" title="product-images">
@@ -1489,6 +1540,7 @@
 
                         </div>
                         <!-- End item -->
+							<!--
                         <div class="product">
                             <div class="product-images">
                                 <a href="#" title="product-images">
@@ -1502,7 +1554,7 @@
 
                         </div>
                         <!-- End item -->
-                    </div>
+                   	<!-- </div>
                     <!-- End product-tab-content products -->
                 </div>
                 <!-- End tab-content -->
@@ -1829,17 +1881,18 @@
            
         </div>
     </div>
-	
-	
+		-->
 	
 	
 	
   <!-- End container-ver2 -->
-            <div class="special home_v1 bg-images box space-100" style="background-image:url('assets/images/home1-banner1.jpg');background-repeat: no-repeat;">
+  <!--
+           <div class="special home_v1 bg-images box space-100" style="background-image:url('assets/images/home1-banner1.jpg');background-repeat: no-repeat;">
                 <div class="col-md-5 float-left align-right">
                     <img class="images-logo" src="assets/images/home1-images-banner1.png" alt="images">
                 </div>
                 <!-- End col-md-7 -->
+				<!--
                 <div class="col-md-7 float-right align-left">
                     <div class="special-content">
                         <img class="icon-big" src="assets/images/icon-shipping-5.png" alt="Big sale today"><h3>BIG SALE TODAY</h3>
@@ -1849,7 +1902,7 @@
                     </div>
                 </div>
                 <!-- End col-md-5 -->
-            </div>
+           <!-- </div>-->
             <!-- End container -->
 			
 			 <!--End container-->
@@ -1897,8 +1950,8 @@
                         </div>
                         End item
                     </div>
-                    End blog-content
-            </div> -->
+                  <!--  End blog-content-->
+          <!--  </div> -->
             <!-- End container -->
 			
 			<div class="choose-us">
