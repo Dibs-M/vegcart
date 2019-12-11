@@ -220,7 +220,7 @@
                             </div> -->
                             <br>
                             <input type="hidden" name="checkoutItems" id="logincheckoutitems" value="${checkoutItems}">           
-                            <button type="submit" class="link-v1 rt" style="margin-top:10px;">LOGIN NOW</button>
+                            <button type="submit" class="link-v1 rt" style="margin-top:10px;" onClick="ValidateLogin()">LOGIN NOW</button>
                             <a href="#" class="link-v1 rt" onclick="openRegistrationForm();">REGISTER NOW</a>
                             
                         </form>
@@ -371,6 +371,21 @@
             </div>
         </footer>
     </div>
+    <script>
+function validateLogin() {
+  var x, text;
+
+  // Get the value of the input field with id="numb"
+  x = document.getElementById("mobile").value;
+  y=document.getElementById("mobile").size
+
+  // If x is Not a Number or less than one or greater than 10
+  if (isNaN(x) || y != 10) {
+    alert("Input not valid. Mobile number should be 10 digit");
+  } 
+  
+}
+</script>
     <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="assets/js/owl.carousel.min.js"></script>
     <script type="text/javascript" src="assets/js/engo-plugins.js"></script>
