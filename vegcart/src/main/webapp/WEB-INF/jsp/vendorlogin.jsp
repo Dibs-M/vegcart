@@ -13,6 +13,10 @@
         <link rel="shortcut icon" href="assets/images/favicon.png" />
         <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,500,700,300' rel='stylesheet' type='text/css'>
         <script type="text/javascript" src="assets/js/jquery-3.2.0.min.js"></script>
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
         <title>Login Page</title>
     </head>
     <body>
@@ -64,6 +68,7 @@
                 <!-- End container -->
             </div>
             <!-- End topbar -->
+            
             <div class="header-top">
                 <div class="container container-ver2">
                     <div class="box">
@@ -111,8 +116,10 @@
                                 <i class="icon"></i>
                             </div>
                         </div> -->
+                       
                         <nav class="mega-menu">
                             <!-- Brand and toggle get grouped for better mobile display -->
+                             <!-- 
                             <ul class="nav navbar-nav" id="navbar">
                                 <li class="level1 active dropdown"><a href="#" title="Home">Home</a>
                                     <ul class="menu-level-1 dropdown-menu">
@@ -167,10 +174,13 @@
                                     </div>
                                     <!-- End Dropdow Menu -->
                                 </li>
+                                 -->
+                                 <!-- 
                                 <li class="level1"><a href="#" title="collections">Blog</a></li>
                                 <li class="level1"><a href="#" title="Contact us">Contact us</a></li>
+                                 -->
                             </ul>
-                        </nav>
+                        </nav>  
                     </div>
                 </div>
                 <!-- End container -->
@@ -204,22 +214,26 @@
                             </a>
                         </div>
                         End social -->
-                        <form class="form-horizontal" method="POST" action="loginvendor">
+                        <form  method="POST" action="loginvendor" class="needs-validation" novalidate>
                             <div class="group box space-20">
-                                <label class="control-label" for="inputemail">Mobile <span class="color">*</span></label>
-                                <input class="form-control" type="text" placeholder="Mobile" id="vendorMobile" name="vendorMobile">
-                            </div>
+                                <label class="control-label" for="inputemail">Mobile no<span class="color">*</span></label>
+                                <input class="form-control" type="text" placeholder="Mobile no" id="vendorMobile" name="vendorMobile" pattern=".{10}" required >
+                                      <div class="valid-feedback">Valid.</div>
+      									<div class="invalid-feedback">Mobile number should be in 10 digits.</div>
+                           	 </div>
                             <div class="group box">
                                 <label class="control-label" for="inputemail">Password <span class="color">*</span></label>
-                                <input class="form-control" type="password" placeholder="Password" id="vendorPassword" name="vendorPassword"> 
+                                <input class="form-control" type="password" placeholder="Password" id="vendorPassword" name="vendorPassword" required> 
+                                      <div class="valid-feedback">Valid.</div>
+      								<div class="invalid-feedback">Please fill out this field.</div>
                             </div>
                             <!-- <div class="remember">
                                 <input id="remeber" type="checkbox" name="check" value="remeber">
                                 <label for="remeber" class="label-check">remember me!</label>
                                 <a class="help" href="#" title="help ?">Fogot your password?</a>   
                             </div> -->
-                           <%--  <input type="hidden" name="checkoutItems" id="logincheckoutitems" value="${checkoutItems}">          --%>  
-                            <button type="submit" class="link-v1 rt" style="margin-top:10px;">LOGIN NOW</button>
+						      <%--  <input type="hidden" name="checkoutItems" id="logincheckoutitems" value="${checkoutItems}">          --%>  
+                            <button type="submit" class="link-v1 rt" style="margin-top:10px;" >LOGIN NOW</button>
                             <a href="#" class="link-v1 rt" onclick="openVendorRegistrationForm();">REGISTER NOW</a>
                         </form>
                         
@@ -370,6 +384,26 @@
             </div>
         </footer>
     </div>
+    <script>
+    (function() {
+    	console.log("calling login")
+    	  'use strict';
+    	  window.addEventListener('load', function() {
+    	    // Get the forms we want to add validation styles to
+    	    var forms = document.getElementsByClassName('needs-validation');
+    	    // Loop over them and prevent submission
+    	    var validation = Array.prototype.filter.call(forms, function(form) {
+    	      form.addEventListener('submit', function(event) {
+    	        if (form.checkValidity() === false) {
+    	          event.preventDefault();
+    	          event.stopPropagation();
+    	        }
+    	        form.classList.add('was-validated');
+    	      }, false);
+    	    });
+    	  }, false);
+    	})();
+</script>
     <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="assets/js/owl.carousel.min.js"></script>
     <script type="text/javascript" src="assets/js/engo-plugins.js"></script>
