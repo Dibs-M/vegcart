@@ -41,6 +41,7 @@
         </div><!-- /.modal-dialog -->
     </div>
     <!-- End pushmenu -->
+    
     <div class="wrappage">
         <header id="header" class="header-v3 header-v2">
 <jsp:include page="vendorHeader.jsp"></jsp:include>
