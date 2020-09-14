@@ -107,7 +107,27 @@ public class VendorServiceImpl implements VendorService {
 		return "success";
 	}
 
+	@Override
+	public VendorProducts updateProduct(VendorProducts vendorProducts) throws Exception {
+		// TODO Auto-generated method stub
+		vendorProductsDAO.save(vendorProducts);
+		return vendorProducts;
+	}
 
+	@Override
+	public String deleteProduct(VendorProducts vendorProducts) throws Exception {
+		// TODO Auto-generated method stub
+		vendorProductsDAO.delete(vendorProducts);
+		return "success";
+	}
+
+	@Override
+	public List<VendorProducts> getProduct(int vendorId) throws Exception {
+		// TODO Auto-generated method stub
+		return vendorProductsDAO.findByVendorId(vendorId);
+	}
+
+	
 	
 
 }

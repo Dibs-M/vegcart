@@ -9,5 +9,6 @@ import com.test.vegcart.entity.VendorProducts;
 public interface VendorProductsDAO extends CrudRepository<VendorProducts, Integer> {
 
 	public List<VendorProducts> findByProductName(String productName);
+	public List<VendorProducts> findByVendorId(int vendorId);
 	
 }

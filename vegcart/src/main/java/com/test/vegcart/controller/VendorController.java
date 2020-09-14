@@ -1,5 +1,6 @@
 package com.test.vegcart.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -7,9 +8,11 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -80,6 +83,7 @@ public class VendorController {
 		
 		if(result.equals("success")) {
 			model.addAttribute("vendororders", vendorService.getVendorOrders(vendor));
+			vendor.setUserType("Vendor");
 			LoginUtil.setLoginVendor(request, vendor);
 			result="vendororder";
 		}else {
@@ -109,6 +113,28 @@ public class VendorController {
 		return result;
 	}
 	
+	@GetMapping("/getProducts")
+	public @ResponseBody List<VendorProducts> getProducts(Model model,HttpServletRequest request) {
+		String result="vendoraddproduct";
+		List<VendorProducts> vendorProducts=new ArrayList<>();
+		try {
+			Vendor vendor=LoginUtil.getLoginVendor(request);
+			List<Integer> al=new ArrayList<>();
+			//al.add(vendor.getId());
+			al.add(3);
+			vendorProducts=vendorService.getVendorProductByIds(al);
+			model.addAttribute("masterproducts", masterService.getProducts());
+			model.addAttribute("masterunits", masterService.getUnits());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		//result="vendoraddproduct";
+		result="success";
+		//return result;;
+		return vendorProducts;
+	}
+	
 	@PostMapping("/addProduct")
 	public String addProduct(Model model,VendorProducts vendorProducts,HttpServletRequest request) {
 		String result="vendoraddproduct";
@@ -123,6 +149,43 @@ public class VendorController {
 			e.printStackTrace();
 		}
 		result="vendoraddproduct";
+		return result;
+	}
+	
+	
+	@PutMapping("/updateProduct")
+	public @ResponseBody VendorProducts UpdateProduct(Model model,VendorProducts vendorProducts,HttpServletRequest request) {
+		String result="vendoraddproduct";
+		try {
+			Vendor vendor=LoginUtil.getLoginVendor(request);
+			vendorProducts.setVendorId(vendor.getId());
+			vendorProducts=vendorService.updateProduct(vendorProducts);
+			model.addAttribute("masterproducts", masterService.getProducts());
+			model.addAttribute("masterunits", masterService.getUnits());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		result="vendoraddproduct";
+		return vendorProducts;
+	}
+	
+	
+	@DeleteMapping("/deleteProduct")
+	public String deleteProduct(Model model,VendorProducts vendorProducts,HttpServletRequest request) {
+		String result="vendoraddproduct";
+		try {
+			Vendor vendor=LoginUtil.getLoginVendor(request);
+			vendorProducts.setVendorId(vendor.getId());
+			result=vendorService.deleteProduct(vendorProducts);
+			model.addAttribute("masterproducts", masterService.getProducts());
+			model.addAttribute("masterunits", masterService.getUnits());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		//result="vendoraddproduct";
+		result="success";
 		return result;
 	}
 

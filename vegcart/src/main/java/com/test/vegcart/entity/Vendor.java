@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name="vendor")
@@ -27,6 +28,10 @@ public class Vendor {
 	
 	@Column(name="active")
 	private String active="Y";
+	
+	@Transient
+	private String userType;
+	
 	
 	public int getId() {
 		return id;
@@ -57,6 +62,12 @@ public class Vendor {
 	}
 	public void setVendorPassword(String vendorPassword) {
 		this.vendorPassword = vendorPassword;
+	}
+	public String getUserType() {
+		return userType;
+	}
+	public void setUserType(String userType) {
+		this.userType = userType;
 	}
 	
 	
