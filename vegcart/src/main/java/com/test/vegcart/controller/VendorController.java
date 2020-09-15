@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -114,36 +113,33 @@ public class VendorController {
 	}
 	
 	@GetMapping("/getProducts")
-	public @ResponseBody List<VendorProducts> getProducts(Model model,HttpServletRequest request) {
+	public String getProducts(Model model,HttpServletRequest request) {
 		String result="vendoraddproduct";
 		List<VendorProducts> vendorProducts=new ArrayList<>();
 		try {
 			Vendor vendor=LoginUtil.getLoginVendor(request);
-			List<Integer> al=new ArrayList<>();
-			//al.add(vendor.getId());
-			al.add(3);
-			vendorProducts=vendorService.getVendorProductByIds(al);
-			model.addAttribute("masterproducts", masterService.getProducts());
-			model.addAttribute("masterunits", masterService.getUnits());
+			vendorProducts=vendorService.getProduct(vendor.getId());
+			model.addAttribute("vendorProducts", vendorProducts);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		//result="vendoraddproduct";
-		result="success";
-		//return result;;
-		return vendorProducts;
+		result="vendoraddproduct";
+		return result;
 	}
 	
 	@PostMapping("/addProduct")
 	public String addProduct(Model model,VendorProducts vendorProducts,HttpServletRequest request) {
 		String result="vendoraddproduct";
+		List<VendorProducts> vendorProductsl=new ArrayList<>();
 		try {
 			Vendor vendor=LoginUtil.getLoginVendor(request);
 			vendorProducts.setVendorId(vendor.getId());
 			result=vendorService.addProduct(vendorProducts);
-			model.addAttribute("masterproducts", masterService.getProducts());
-			model.addAttribute("masterunits", masterService.getUnits());
+			/*model.addAttribute("masterproducts", masterService.getProducts());
+			model.addAttribute("masterunits", masterService.getUnits());*/
+			vendorProductsl=vendorService.getProduct(vendor.getId());
+			model.addAttribute("vendorProducts", vendorProductsl);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -156,12 +152,15 @@ public class VendorController {
 	@PutMapping("/updateProduct")
 	public @ResponseBody VendorProducts UpdateProduct(Model model,VendorProducts vendorProducts,HttpServletRequest request) {
 		String result="vendoraddproduct";
+		List<VendorProducts> vendorProductsl=new ArrayList<>();
 		try {
 			Vendor vendor=LoginUtil.getLoginVendor(request);
 			vendorProducts.setVendorId(vendor.getId());
 			vendorProducts=vendorService.updateProduct(vendorProducts);
-			model.addAttribute("masterproducts", masterService.getProducts());
-			model.addAttribute("masterunits", masterService.getUnits());
+			/*model.addAttribute("masterproducts", masterService.getProducts());
+			model.addAttribute("masterunits", masterService.getUnits());*/
+			vendorProductsl=vendorService.getProduct(vendor.getId());
+			model.addAttribute("vendorProducts", vendorProductsl);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -172,20 +171,22 @@ public class VendorController {
 	
 	
 	@DeleteMapping("/deleteProduct")
-	public String deleteProduct(Model model,VendorProducts vendorProducts,HttpServletRequest request) {
+	public String deleteProduct(Model model,@RequestParam("id") int id,HttpServletRequest request) {
 		String result="vendoraddproduct";
+		List<VendorProducts> vendorProductsl=new ArrayList<>();
 		try {
 			Vendor vendor=LoginUtil.getLoginVendor(request);
-			vendorProducts.setVendorId(vendor.getId());
-			result=vendorService.deleteProduct(vendorProducts);
-			model.addAttribute("masterproducts", masterService.getProducts());
-			model.addAttribute("masterunits", masterService.getUnits());
+			//vendorProducts.setVendorId(vendor.getId());
+			result=vendorService.deleteProduct(id);
+			/*model.addAttribute("masterproducts", masterService.getProducts());
+			model.addAttribute("masterunits", masterService.getUnits());*/
+			vendorProductsl=vendorService.getProduct(vendor.getId());
+			model.addAttribute("vendorProducts", vendorProductsl);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		//result="vendoraddproduct";
-		result="success";
+		result="vendoraddproduct";
 		return result;
 	}
 

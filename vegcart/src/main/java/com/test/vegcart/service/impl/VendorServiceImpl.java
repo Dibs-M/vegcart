@@ -115,9 +115,9 @@ public class VendorServiceImpl implements VendorService {
 	}
 
 	@Override
-	public String deleteProduct(VendorProducts vendorProducts) throws Exception {
+	public String deleteProduct(int id) throws Exception {
 		// TODO Auto-generated method stub
-		vendorProductsDAO.delete(vendorProducts);
+		vendorProductsDAO.delete(id);
 		return "success";
 	}
 

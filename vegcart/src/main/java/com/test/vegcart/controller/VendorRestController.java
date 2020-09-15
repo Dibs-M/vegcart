@@ -100,14 +100,12 @@ public class VendorRestController {
 	
 	
 	@DeleteMapping("/deleteProduct1")
-	public String deleteProduct(Model model,VendorProducts vendorProducts,HttpServletRequest request) {
+	public String deleteProduct(@RequestParam("id") int id) {
 		String result="vendoraddproduct";
 		try {
-			Vendor vendor=LoginUtil.getLoginVendor(request);
-			vendorProducts.setVendorId(vendor.getId());
-			result=vendorService.deleteProduct(vendorProducts);
-			model.addAttribute("masterproducts", masterService.getProducts());
-			model.addAttribute("masterunits", masterService.getUnits());
+			
+			result=vendorService.deleteProduct(id);
+			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
