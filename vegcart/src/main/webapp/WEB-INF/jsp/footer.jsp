@@ -260,11 +260,11 @@
                         <h3 class="title-footer">Infomation</h3>
                         <ul class="list-footer">
                             <li><a href="#" title="title">Delivery</a></li>
-                            <li><a href="#" title="title">Legal Notice</a></li>
+                       
                             <li><a href="#" title="title">Terms & Conditions</a></li>
                             <li><a href="#" title="title">About Us</a></li>
                             <li><a href="#" title="title">Secure Payment</a></li>
-                            <li><a href="#" title="title">Our Stores</a></li>
+                           
                         </ul>
                     </div>
                     <div class="col-md-3 col-sm-6">
@@ -279,7 +279,7 @@
                         <a href="#" title="paypal"><img src="assets/images/paypal-footer.png" alt="images"></a>
                     </div>
                     <div class="col-md-4 col-sm-6">
-                        <h3 class="title-footer">Get Newsletter</h3>
+                        <h3 class="title-footer">Contact Us</h3>
                         <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium</p>
                         <div class="subscribe">
                             <form action="#" method="get" accept-charset="utf-8">
