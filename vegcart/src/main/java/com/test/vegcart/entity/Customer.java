@@ -28,6 +28,9 @@ public class Customer {
 	
 	@Transient
 	private String checkoutItems;
+	
+	@Transient
+	private String userType;
 
 	public String getMobile() {
 		return mobile;
@@ -76,6 +79,13 @@ public class Customer {
 	public void setCustomerName(String customerName) {
 		this.customerName = customerName;
 	}
-	
+
+	public String getUserType() {
+		return userType;
+	}
+
+	public void setUserType(String userType) {
+		this.userType = userType;
+	}
 	
 }

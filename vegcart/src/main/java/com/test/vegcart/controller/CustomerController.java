@@ -45,6 +45,7 @@ public class CustomerController {
 		}
 		
 		if(result.equals("success")) {
+			if(!customer.getCheckoutItems().equals("")) {
 			String [] itemIds=customer.getCheckoutItems().split(",");
 			List<Integer> idList=new ArrayList<Integer>();
 			
@@ -53,6 +54,8 @@ public class CustomerController {
 			}
 			
 			model.addAttribute("vegetables", vendorService.getVendorProductByIds(idList));
+			}
+			
 			result="checkout";
 		}else {
 			result="register";
