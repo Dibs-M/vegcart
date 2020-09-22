@@ -92,6 +92,14 @@ public class VendorController {
 		return result;
 	}
 	
+	@GetMapping("/vendororder")
+	public String vendorOrder2(Model model,HttpServletRequest request) {
+		String result="fail";
+		Vendor vendor=LoginUtil.getLoginVendor(request);
+		model.addAttribute("vendororders", vendorService.getVendorOrders(vendor));
+		result="vendororder";
+		return result;
+	}
 	
 	@PostMapping("/vendororder")
 	public String vendorOrder(Model model,HttpServletRequest request) {

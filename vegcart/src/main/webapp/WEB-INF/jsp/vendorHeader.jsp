@@ -54,7 +54,7 @@
                         <div class="float-right align-right">
                             
                             <div class="hover-menu">
-                                <a class="acc" href="#" title="Action"><img src="assets/images/icon-user-header.png" alt="icon">Action</a>
+                                <a class="acc" href="#" title="Action"><img src="assets/images/icon-user-header.png" alt="icon">  &nbsp;&nbsp;Action</a>
                                <c:if test="${not empty loginvendor}">
                                 <ul class="list-menu">
                                     <li style="width:90px"><a href="addvendorproductp" title="Add Product">Add Product</a></li>
