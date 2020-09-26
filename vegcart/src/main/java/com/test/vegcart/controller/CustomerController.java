@@ -99,7 +99,7 @@ public class CustomerController {
 	@PostMapping("/logincustomer")
 	public String loginUser(Model model,@ModelAttribute Customer customer,HttpServletRequest request) {
 		String result="fail";
-		String [] itemIds=customer.getCheckoutItems().split(",");
+		
 		try {
 			model.addAttribute("checkoutItems", customer.getCheckoutItems());
 			Customer rcustomer=customerService.getCustomerByMobile(customer);
@@ -115,11 +115,15 @@ public class CustomerController {
 		}
 		
 		if(result.equals("success")) {
+			
+			if(customer.getCheckoutItems()!=null && !customer.getCheckoutItems().equals("")) {
+			String [] itemIds=customer.getCheckoutItems().split(",");
 			List<Integer> idList=new ArrayList<Integer>();
 			for (String id : itemIds) {
 				idList.add(Integer.valueOf(id));
 			}
 			model.addAttribute("vegetables", vendorService.getVendorProductByIds(idList));
+			}
 			result="checkout";
 		}else {
 			result="login";

@@ -13,6 +13,7 @@
         <link rel="shortcut icon" href="assets/images/favicon.png" />
         <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,500,700,300' rel='stylesheet' type='text/css'>
         <script type="text/javascript" src="assets/js/jquery-3.2.0.min.js"></script>
+        <script type="text/javascript" src="assets/js/vendororder.js"></script>
         <title>Vendor Order</title>
     </head>
     <body>
