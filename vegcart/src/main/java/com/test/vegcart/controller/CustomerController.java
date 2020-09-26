@@ -104,11 +104,13 @@ public class CustomerController {
 			model.addAttribute("checkoutItems", customer.getCheckoutItems());
 			Customer rcustomer=customerService.getCustomerByMobile(customer);
 			if(null!=rcustomer && rcustomer.getPassword().equals(customer.getPassword())) {
+				rcustomer.setCheckoutItems(customer.getCheckoutItems());
 				customer=rcustomer;
+				LoginUtil.setLoginUser(request, customer);
 				result="success";
 			}
 			
-			LoginUtil.setLoginUser(request, customer);
+			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
