@@ -8,6 +8,7 @@ import com.test.vegcart.entity.VendorProducts;
 
 public interface VendorService {
 	public String registerVendor(Vendor vendor) throws Exception;
+	public VendorProducts getProductById(int vendorId) throws Exception;
 	public List<VendorProducts> getProduct(int vendorId) throws Exception;
 	public String addProduct(VendorProducts vendorProducts) throws Exception;
 	public VendorProducts updateProduct(VendorProducts vendorProducts) throws Exception;

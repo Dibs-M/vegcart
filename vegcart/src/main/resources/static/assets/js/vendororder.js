@@ -8,3 +8,11 @@ function completeVendorOrder(id){
 function openVendorOrderPage(){
 	$('#vendororderform').submit();
 }
+
+
+function openVendorProductEditPage(id){
+	alert('id'+id)
+	$('#editvendorproduct').val(id);
+	$('#editform').submit();
+	
+}

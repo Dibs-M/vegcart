@@ -112,7 +112,7 @@ public class VendorController {
 	
 	
 	
-	@GetMapping("/addvendorproductp")
+	@PostMapping("/addvendorproductp")
 	public String addVendorProduct(Model model) {
 		String result="vendoraddproduct";
 		model.addAttribute("masterproducts", masterService.getProducts());
@@ -120,23 +120,48 @@ public class VendorController {
 		return result;
 	}
 	
-	@GetMapping("/getProducts")
-	public String getProducts(Model model,HttpServletRequest request) {
-		String result="vendoraddproduct";
-		List<VendorProducts> vendorProducts=new ArrayList<>();
+	@PostMapping("/editvendorproductp")
+	public String editVendorProduct(Model model,@RequestParam("editvendorproduct") int id) {
+		String result="editvendorproducts";
+		model.addAttribute("masterproducts", masterService.getProducts());
+		model.addAttribute("masterunits", masterService.getUnits());
+		VendorProducts vendorProducts=null;
+
+
 		try {
-			Vendor vendor=LoginUtil.getLoginVendor(request);
-			vendorProducts=vendorService.getProduct(vendor.getId());
-			model.addAttribute("vendorProducts", vendorProducts);
+			vendorProducts=vendorService.getProductById(id);
+			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		result="vendoraddproduct";
+		model.addAttribute("vendorProduct", vendorProducts);
+		return result;
+	}
+	
+	
+	@GetMapping("/getProducts")
+	public String getProducts(Model model,HttpServletRequest request) {
+		System.out.println("getProducts calling");
+		String result="vendoraddproduct";
+		List<VendorProducts> vendorProducts=new ArrayList<>();
+		try {
+			Vendor vendor=LoginUtil.getLoginVendor(request);
+			//returning collection
+			vendorProducts=vendorService.getProduct(vendor.getId());
+			System.out.println(vendor.getId());
+			model.addAttribute("vendorProducts", vendorProducts);
+			//vendorProducts used to fetch data in returned jsp page
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		result="viewvendorproducts";
 		return result;
 	}
 	
 	@PostMapping("/addProduct")
+	// vendorProducts returned from the jsp page
 	public String addProduct(Model model,VendorProducts vendorProducts,HttpServletRequest request) {
 		String result="vendoraddproduct";
 		List<VendorProducts> vendorProductsl=new ArrayList<>();
@@ -157,13 +182,16 @@ public class VendorController {
 	}
 	
 	
-	@PutMapping("/updateProduct")
-	public @ResponseBody VendorProducts UpdateProduct(Model model,VendorProducts vendorProducts,HttpServletRequest request) {
+	@PostMapping("/updateProduct")
+	public   String UpdateProduct(Model model,VendorProducts vendorProducts,HttpServletRequest request) {
 		String result="vendoraddproduct";
 		List<VendorProducts> vendorProductsl=new ArrayList<>();
 		try {
 			Vendor vendor=LoginUtil.getLoginVendor(request);
 			vendorProducts.setVendorId(vendor.getId());
+			//vendorProducts.setId(vendorProducts.getId());
+			System.out.println("vendorProducts:"+vendorProducts);
+		
 			vendorProducts=vendorService.updateProduct(vendorProducts);
 			/*model.addAttribute("masterproducts", masterService.getProducts());
 			model.addAttribute("masterunits", masterService.getUnits());*/
@@ -173,14 +201,16 @@ public class VendorController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		result="vendoraddproduct";
-		return vendorProducts;
+		System.out.println("viewvendorproducts calling");
+		result="viewvendorproducts";
+		//VendorProducts--
+		return result;
 	}
 	
 	
-	@DeleteMapping("/deleteProduct")
+	@GetMapping("/deleteProduct")
 	public String deleteProduct(Model model,@RequestParam("id") int id,HttpServletRequest request) {
-		String result="vendoraddproduct";
+		String result="viewvendorproducts";
 		List<VendorProducts> vendorProductsl=new ArrayList<>();
 		try {
 			Vendor vendor=LoginUtil.getLoginVendor(request);
@@ -194,7 +224,7 @@ public class VendorController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		result="vendoraddproduct";
+		result="viewvendorproducts";
 		return result;
 	}
 

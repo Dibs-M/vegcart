@@ -336,6 +336,26 @@
         </div>
     </footer>
 <!-- End wrappage -->
+    <script>
+    (function() {
+    	console.log("calling login")
+    	  'use strict';
+    	  window.addEventListener('load', function() {
+    	    // Get the forms we want to add validation styles to
+    	    var forms = document.getElementsByClassName('needs-validation');
+    	    // Loop over them and prevent submission
+    	    var validation = Array.prototype.filter.call(forms, function(form) {
+    	      form.addEventListener('submit', function(event) {
+    	        if (form.checkValidity() === false) {
+    	          event.preventDefault();
+    	          event.stopPropagation();
+    	        }
+    	        form.classList.add('was-validated');
+    	      }, false);
+    	    });
+    	  }, false);
+    	})();
+</script>
 <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="assets/js/owl.carousel.min.js"></script>
     <script type="text/javascript" src="assets/js/jquery.themepunch.revolution.min.js"></script>
@@ -346,5 +366,9 @@
     <script type="text/javascript" src="assets/js/slick.min.js"></script>
     <script type="text/javascript" src="assets/js/store.js"></script>
     <script type="text/javascript" src="assets/js/home.js"></script>
+   
+  
+    <script type="text/javascript" src="assets/js/jquery.mousewheel.min.js"></script>
+    <script type="text/javascript" src="assets/js/registration.js"></script>
 </body>
 </html>

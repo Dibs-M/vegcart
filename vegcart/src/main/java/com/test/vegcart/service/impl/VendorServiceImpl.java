@@ -127,6 +127,12 @@ public class VendorServiceImpl implements VendorService {
 		return vendorProductsDAO.findByVendorId(vendorId);
 	}
 
+	@Override
+	public VendorProducts getProductById(int vendorId) throws Exception {
+		// TODO Auto-generated method stub
+		return vendorProductsDAO.findOne(vendorId);
+	}
+
 	
 	
 

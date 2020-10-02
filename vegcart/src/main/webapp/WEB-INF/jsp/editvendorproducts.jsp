@@ -68,27 +68,30 @@ return true;
                         <p><a href="#" title="Home">Home</a><i class="fa fa-caret-right"></i>Vendor Orders</p>
                     </div>
                 </div>
-            </div>
+            </div>`
                 <!-- End container -->
            <div class="container container-ver2">
                   
 
 							
 
-												<div class="box cart-container">
-							<h2>ADD Products </h2>
-                            <form class="form-horizontal" method="POST" action="addProduct">
-                            <c:set var="imagemapping" value=""/>
+			<div class="box cart-container">
+							<h2>Edit Products </h2>
+                            <form class="form-horizontal" method="Post" action="updateProduct">
+                            <input class="form-control" type="hidden" readonly="readonly"  id="id" name="id" value=${vendorProduct.id}>
+  							<c:set var="imagemapping" value=""/>
                             <div class="group box space-20">
                                     <label class="control-label" for="inputemailres">Product Name <span class="color">*</span></label>
-                                    <select id="productName" name="productName" class="form-control" onchange="fecthProductImage(this)" >
+                                    <%-- <select id="productName" name="productName" class="form-control" onchange="fecthProductImage(this)" >
                                     <option value="Select Product">Select Product</option>
                                     <c:forEach items="${masterproducts}" var="product">
                                     <option value="${product.productName}">${product.productName}</option>
                                     <c:set var="imagemapping" value="${imagemapping}${product.productName}:${product.productImage}," />
-                                    </c:forEach>
-                                    </select>
+                                    </c:forEach> 
                                     <input type="hidden" value="${imagemapping}" id="productimagemapping">
+                                    </select>--%>
+                                    <input class="form-control" type="text" readonly="readonly"  id="productName" name="productName" value=${vendorProduct.productName}>
+                                    
                                 </div>
                                 
                                 <div class="group box space-20">
@@ -96,45 +99,44 @@ return true;
                                     <input type="hidden" name="productImage" id="productImage">
                                 </div>
                                 
-                                
-                            
-                                <div class="group box space-20">
+                    
+                                  <div class="group box space-20">
                                     <label class="control-label" for="inputemailres">Product Price <span class="color">*</span></label>
-                                    <input class="form-control" type="text" placeholder="Enter Product Price" id="productPrice" name="productPrice">
+                                    <input class="form-control" type="text"  id="productPrice" name="productPrice" value=${vendorProduct.productPrice}>
                                 </div>
-                                
-                                <div class="group box space-20">
+                                  <div class="group box space-20">
                                     <label class="control-label" for="inputemailres">Product Quantity <span class="color">*</span></label>
-                                    <input class="form-control" type="text" placeholder="Enter Product Quantity" id="productStandardQuantity" name="productStandardQuantity">
+                                    <input class="form-control" type="text" id="productStandardQuantity" name="productStandardQuantity" value=${vendorProduct.productStandardQuantity}>
                                 </div>
-                                
-                                <div class="group box space-20">
+                                 
+                       			 <div class="group box space-20">
                                     <label class="control-label" for="inputemailres">Product Unit <span class="color">*</span></label>
-                                    <select id="productUnit" name="productUnit" class="form-control">
+                                    <%-- <select id="productUnit" name="productUnit" class="form-control">
                                     <option value="Select Unit">Select Unit</option>
                                     <c:forEach items="${masterunits}" var="unit">
                                     <option value="${unit.unitName}">${unit.unitName}</option>
                                     </c:forEach>
-                                    </select>
+                                    </select> --%>
+                                    <input class="form-control" type="text" readonly="readonly"  id="productUnit" name="productUnit" value=${vendorProduct.productUnit}>
                                 </div>
                                 
                                 <div class="group box space-20">
                                     <label class="control-label" for="inputemailres">Discount In Rupees <span class="color">*</span></label>
-                                    <input class="form-control" type="text" placeholder="Discount In Rupees" id="discount" name="discount">
+                                    <input class="form-control" type="text" placeholder="Discount In Rupees" id="discount" name="discount" value=${vendorProduct.discount}>
                                 </div>
                                  
-                                <button type="submit" class="link-v1 rt">Submit</button>
+                                <button type="submit" class="link-v1 rt">Update Product</button>
                             </form>
 							</div>
           
                                    
                         
        
-            
-                
+    
                 <!-- End container -->
             </div>
-       
+            <!-- End cat-box-container -->
+        </div>
         
          <jsp:include page="footer.jsp" />  
          
