@@ -18,4 +18,5 @@ public interface CustomerService {
 	public String placeOrders(List<Order> orders);
 	
 	List<Order> getCustomerOrders(Customer customer);
+	public List<Order> getCustomerOrdersHistory(Customer customer,String OrderStatus);
 }

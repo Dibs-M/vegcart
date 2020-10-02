@@ -20,7 +20,7 @@ public interface VendorService {
 	
 	public Vendor getVendorByMobile(Vendor vendor);
 	
-	public List<Order> getVendorOrders(Vendor vendor);
+	public List<Order> getVendorOrders(Vendor vendor,String status);
 	
 	public String completeDelivery(int orderId);
 	

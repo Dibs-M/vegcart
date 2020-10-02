@@ -101,4 +101,16 @@ public class CustomerServiceImpl implements CustomerService {
 		return orderList;
 	}
 
+	@Override
+	public List<Order> getCustomerOrdersHistory(Customer customer, String OrderStatus) {
+		// TODO Auto-generated method stub
+		List<Order> orderList=new ArrayList<Order>();
+		//orderDAO.findByCustomerMobile(customer.getMobile()).forEach(orderList::add);
+		Iterator<Order> itr=orderDAO.findByCustomerMobileAndOrderStatus(customer.getMobile(),OrderStatus).iterator();
+		while(itr.hasNext()) {
+			orderList.add(itr.next());
+		}
+		return orderList;
+	}
+
 }

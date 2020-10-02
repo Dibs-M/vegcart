@@ -22,6 +22,7 @@ import com.test.vegcart.entity.VendorProducts;
 import com.test.vegcart.service.CustomerService;
 import com.test.vegcart.service.VendorService;
 import com.test.vegcart.util.LoginUtil;
+import com.test.vegcart.util.VendorConstant;
 
 @Controller
 public class CustomerController {
@@ -232,6 +233,21 @@ public class CustomerController {
 		}
 		
 		return "customerorder";
+	}
+	
+	@GetMapping("/customerordershistory")
+	public String customerOrdersHistory(Model model,HttpServletRequest request) {
+		String result="fail";
+		try {
+			Customer customer=LoginUtil.getLoginUser(request);
+			List<Order> orders=customerService.getCustomerOrdersHistory(customer,VendorConstant.ORDER_DELIVERED);
+			model.addAttribute("customerordershistory",orders);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return "customerordershistory";
 	}
 	
 	@PostMapping("/completeorder")

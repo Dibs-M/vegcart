@@ -86,11 +86,11 @@ public class VendorServiceImpl implements VendorService {
 
 	@Transactional
 	@Override
-	public List<Order> getVendorOrders(Vendor vendor) {
+	public List<Order> getVendorOrders(Vendor vendor,String status) {
 		// TODO Auto-generated method stub
 		List<Order> vendorOrders=new ArrayList<Order>();
 		//orderDAO.findByVendorIdAndOrderStatus(vendor.getId(),"Recieved").forEach(vendorOrders::add);
-		Iterator<Order> itr=orderDAO.findByVendorIdAndOrderStatus(vendor.getId(),"Recieved").iterator();
+		Iterator<Order> itr=orderDAO.findByVendorIdAndOrderStatus(vendor.getId(),status).iterator();
 		while(itr.hasNext()) {
 			vendorOrders.add(itr.next());
 		}

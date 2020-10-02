@@ -21,6 +21,7 @@ import com.test.vegcart.entity.VendorProducts;
 import com.test.vegcart.service.MasterService;
 import com.test.vegcart.service.VendorService;
 import com.test.vegcart.util.LoginUtil;
+import com.test.vegcart.util.VendorConstant;
 
 @Controller
 public class VendorController {
@@ -81,7 +82,7 @@ public class VendorController {
 		}
 		
 		if(result.equals("success")) {
-			model.addAttribute("vendororders", vendorService.getVendorOrders(vendor));
+			model.addAttribute("vendororders", vendorService.getVendorOrders(vendor,VendorConstant.ORDER_RECIEVED));
 			vendor.setUserType("Vendor");
 			LoginUtil.setLoginVendor(request, vendor);
 			result="vendororder";
@@ -96,7 +97,7 @@ public class VendorController {
 	public String vendorOrder2(Model model,HttpServletRequest request) {
 		String result="fail";
 		Vendor vendor=LoginUtil.getLoginVendor(request);
-		model.addAttribute("vendororders", vendorService.getVendorOrders(vendor));
+		model.addAttribute("vendororders", vendorService.getVendorOrders(vendor,VendorConstant.ORDER_RECIEVED));
 		result="vendororder";
 		return result;
 	}
@@ -105,11 +106,20 @@ public class VendorController {
 	public String vendorOrder(Model model,HttpServletRequest request) {
 		String result="fail";
 		Vendor vendor=LoginUtil.getLoginVendor(request);
-		model.addAttribute("vendororders", vendorService.getVendorOrders(vendor));
+		model.addAttribute("vendororders", vendorService.getVendorOrders(vendor,VendorConstant.ORDER_RECIEVED));
 		result="vendororder";
 		return result;
 	}
 	
+	
+	@GetMapping("/vendororderhistory")
+	public String vendorOrderHistory(Model model,HttpServletRequest request) {
+		String result="fail";
+		Vendor vendor=LoginUtil.getLoginVendor(request);
+		model.addAttribute("vendorordershistory", vendorService.getVendorOrders(vendor,VendorConstant.ORDER_DELIVERED));
+		result="vendororderhistory";
+		return result;
+	}
 	
 	
 	@PostMapping("/addvendorproductp")
@@ -239,7 +249,7 @@ public class VendorController {
 		try {
 			result=vendorService.completeDelivery(orderId);
 			Vendor vendor=LoginUtil.getLoginVendor(request);
-			model.addAttribute("vendororders", vendorService.getVendorOrders(vendor));
+			model.addAttribute("vendororders", vendorService.getVendorOrders(vendor,VendorConstant.ORDER_RECIEVED));
 			result="vendororder";
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
