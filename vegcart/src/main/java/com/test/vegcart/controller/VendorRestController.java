@@ -21,7 +21,7 @@ import com.test.vegcart.entity.VendorProducts;
 import com.test.vegcart.service.MasterService;
 import com.test.vegcart.service.VendorService;
 import com.test.vegcart.util.LoginUtil;
-import com.test.vegcart.util.VendorConstant;
+import com.test.vegcart.util.ApplicationConstant;
 
 @RestController
 public class VendorRestController {
@@ -42,7 +42,7 @@ public class VendorRestController {
 	public String vendorOrder(Model model,HttpServletRequest request) {
 		String result="fail";
 		Vendor vendor=LoginUtil.getLoginVendor(request);
-		model.addAttribute("vendororders", vendorService.getVendorOrders(vendor,VendorConstant.ORDER_RECIEVED));
+		model.addAttribute("vendororders", vendorService.getVendorOrders(vendor,ApplicationConstant.ORDER_RECIEVED));
 		result="vendororder";
 		return result;
 	}
@@ -127,7 +127,7 @@ public class VendorRestController {
 		try {
 			result=vendorService.completeDelivery(orderId);
 			Vendor vendor=LoginUtil.getLoginVendor(request);
-			model.addAttribute("vendororders", vendorService.getVendorOrders(vendor,VendorConstant.ORDER_RECIEVED));
+			model.addAttribute("vendororders", vendorService.getVendorOrders(vendor,ApplicationConstant.ORDER_RECIEVED));
 			result="vendororder";
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

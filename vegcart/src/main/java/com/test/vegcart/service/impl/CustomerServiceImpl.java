@@ -113,4 +113,15 @@ public class CustomerServiceImpl implements CustomerService {
 		return orderList;
 	}
 
+	@Override
+	public List<Customer> getAllCustomer() {
+		// TODO Auto-generated method stub
+		List<Customer> customers=new ArrayList<>();
+		Iterator<Customer> itr=customerDAO.findAll().iterator();
+		while(itr.hasNext()) {
+			customers.add(itr.next());
+		}
+		return customers;
+	}
+
 }

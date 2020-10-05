@@ -2,6 +2,7 @@ package com.test.vegcart.util;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.test.vegcart.entity.Admin;
 import com.test.vegcart.entity.Customer;
 import com.test.vegcart.entity.Vendor;
 
@@ -28,6 +29,17 @@ public class LoginUtil {
 		
 		Vendor vendor=(Vendor)request.getSession().getAttribute("loginvendor");
 		return vendor;
+	}
+	
+	
+	public static void setLoginAdmin(HttpServletRequest request,Admin admin) {
+		request.getSession().setAttribute("loginadmin", admin);
+	}
+	
+	public static Admin getLoginAdmin(HttpServletRequest request) {
+		
+		Admin admin=(Admin)request.getSession().getAttribute("loginadmin");
+		return admin;
 	}
 	
 }

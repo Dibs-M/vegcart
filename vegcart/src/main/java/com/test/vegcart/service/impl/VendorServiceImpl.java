@@ -133,6 +133,17 @@ public class VendorServiceImpl implements VendorService {
 		return vendorProductsDAO.findOne(vendorId);
 	}
 
+	@Override
+	public List<Vendor> getAllVendors() {
+		// TODO Auto-generated method stub
+		List<Vendor> vendors=new ArrayList<>();
+		Iterator<Vendor> itr = vendorDAO.findAll().iterator();
+		while(itr.hasNext()) {
+			vendors.add(itr.next());
+		}
+		return vendors;
+	}
+
 	
 	
 

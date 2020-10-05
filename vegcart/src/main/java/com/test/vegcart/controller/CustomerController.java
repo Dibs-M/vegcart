@@ -22,7 +22,7 @@ import com.test.vegcart.entity.VendorProducts;
 import com.test.vegcart.service.CustomerService;
 import com.test.vegcart.service.VendorService;
 import com.test.vegcart.util.LoginUtil;
-import com.test.vegcart.util.VendorConstant;
+import com.test.vegcart.util.ApplicationConstant;
 
 @Controller
 public class CustomerController {
@@ -240,7 +240,7 @@ public class CustomerController {
 		String result="fail";
 		try {
 			Customer customer=LoginUtil.getLoginUser(request);
-			List<Order> orders=customerService.getCustomerOrdersHistory(customer,VendorConstant.ORDER_DELIVERED);
+			List<Order> orders=customerService.getCustomerOrdersHistory(customer,ApplicationConstant.ORDER_DELIVERED);
 			model.addAttribute("customerordershistory",orders);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
