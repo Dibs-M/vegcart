@@ -13,7 +13,7 @@
         <link rel="shortcut icon" href="assets/images/favicon.png" />
         <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,500,700,300' rel='stylesheet' type='text/css'>
         <script type="text/javascript" src="assets/js/jquery-3.2.0.min.js"></script>
-        <script type="text/javascript" src="assets/js/vendororder.js"></script>
+       
         <title>Add Vendor Product</title>
         <script type="javascript">
 function validate(vendoraddproduct)
@@ -65,32 +65,28 @@ return true;
                 <div class="banner-header banner-lbook3">
                     <img src="assets/images/banner-catalog1.jpg" alt="Banner-header">
                     <div class="text">
-                        <h3>Vendor Orders</h3>
-                        <p><a href="#" title="Home">Home</a><i class="fa fa-caret-right"></i>Vendor Orders</p>
+                        <h3>Vendor Account</h3>
+                        <p><a href="vendororder" title="Home">Home</a><i class="fa fa-caret-right"></i>Vendor Account</p>
+                             <!--      <a class="link-v1 rt" href="#" title="Edit Product" onclick="openVendorProductEditPage('${vendorProduct.id}');">Edit Product</a>--> 
                     </div>
                 </div>
             </div>
                 <!-- End container -->
            <div class="container container-ver2">
                     <div class="box cart-container">
-
-							
-
+                    <div>
+                    <h2>Product Details</h2>
+                    </div>
+                    <BR>
+                    <div>
+                     				 <form class="form-horizontal" method="POST" action="addvendorproductp">						
+									<button type="submit" class="link-v1 rt">Add Products</button>
+									</form>
+                    </div>
 							<div>
 							<table class="table space-30" border="1">
                             <thead>
-                            <tr>
-                            <td> 
-                            							
-								<h3>Product Details</h3>
-							
-                            </td>
-                             <td> 
-                            	  <form class="form-horizontal" method="POST" action="addvendorproductp">						
-								<button type="submit" class="link-v1 rt">Add Products</button>
-							</form>
-                            </td>
-                            </tr>
+
                                 <tr>
                                    
                                     <th class="produc-name">Product Name</th>
@@ -98,7 +94,8 @@ return true;
                                     <th class="product-quantity">Product Quantity</th>
                                     <th class="total-price">Product Unit</th>
                                     <th class="total-price">Discount in Rupees</th>
-                               
+                               <th class="total-price" colspan=2>Edit/Delete </th>
+                       
                                 </tr>
                             </thead>
                             <tbody>

@@ -11,7 +11,7 @@ function openVendorOrderPage(){
 
 
 function openVendorProductEditPage(id){
-	alert('id'+id)
+//	alert('id'+id)
 	$('#editvendorproduct').val(id);
 	$('#editform').submit();
 	

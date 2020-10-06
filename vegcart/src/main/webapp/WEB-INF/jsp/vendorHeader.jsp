@@ -58,8 +58,9 @@
                                <c:if test="${not empty loginvendor}">
                                 <ul class="list-menu">
                                 <!--     <li style="width:90px"><a href="addvendorproductp" title="Add Product">My Products</a></li> -->
-                                     <li style="width:90px"><a href="getProducts" title="My Product">My Products</a></li>
-                                    <li style="width:90px"><a href="#" title="My Orders" onclick="openVendorOrderPage()">My Orders</a></li>
+                                     <li style="width:90px"><a href="getProducts" title="My Products">My Products</a></li>
+                                    <li style="width:90px"><a href="vendororder" title="My Orders" onclick="openVendorOrderPage()">My Orders</a></li>
+                                      <li style="width:90px"><a href="vendororderhistory" title="My Order History" onclick="openVendorOrderPage()">My Order History</a></li>
                                 </ul>
                                 </c:if>
                             </div>
@@ -86,5 +87,6 @@
     <script type="text/javascript" src="assets/js/slick.min.js"></script>
     <script type="text/javascript" src="assets/js/store.js"></script>
     <script type="text/javascript" src="assets/js/home.js"></script>
+     <script type="text/javascript" src="assets/js/vendororder.js"></script>
 </body>
 </html>
