@@ -25,4 +25,6 @@ public interface VendorService {
 	public String completeDelivery(int orderId);
 	
 	public List<Vendor> getAllVendors();
+	
+	public Vendor getVendorByID(int id);
 }

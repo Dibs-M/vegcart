@@ -10,6 +10,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.test.vegcart.entity.Admin;
 import com.test.vegcart.entity.Customer;
@@ -75,6 +77,10 @@ public class AdminController {
 		return "admincustomerpage";
 	}
 	
+	private List<Customer> getCustomers(){
+		return customerService.getAllCustomer();
+	}
+	
 	@GetMapping("/adminvendors")
 	public String getAllVendors(Model model){
 		model.addAttribute("vendors", vendorService.getAllVendors());
@@ -87,8 +93,27 @@ public class AdminController {
 		return "adminproductspage";
 	}
 	
-	private List<Customer> getCustomers(){
-		return customerService.getAllCustomer();
+	@GetMapping("/adminunits")
+	public String getAllUnits(Model model){
+		model.addAttribute("units", masterService.getUnits());
+		return "adminunitspage";
+	}
+	
+	@GetMapping("/adminvendorproducts")
+	public String getAllVendorProducts(Model model){
+		model.addAttribute("vendorproducts", vendorService.getAllVendorProducts());
+		return "adminvendorproductspage";
+	}
+	
+	@GetMapping("/admincustomerorder")
+	public String getAllOrders(Model model){
+		model.addAttribute("customerorders", adminService.getCustomerOrders());
+		return "admincustomerorderpage";
+	}
+	
+	@GetMapping("/adminvendor")
+	public @ResponseBody Vendor getVendor(@RequestParam("id") int id) {
+		return vendorService.getVendorByID(id);
 	}
 	
 }

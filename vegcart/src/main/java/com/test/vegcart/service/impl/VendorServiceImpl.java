@@ -144,6 +144,12 @@ public class VendorServiceImpl implements VendorService {
 		return vendors;
 	}
 
+	@Override
+	public Vendor getVendorByID(int id) {
+		// TODO Auto-generated method stub
+		return vendorDAO.findOne(id);
+	}
+
 	
 	
 
