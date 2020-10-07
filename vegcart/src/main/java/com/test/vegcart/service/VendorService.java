@@ -27,4 +27,6 @@ public interface VendorService {
 	public List<Vendor> getAllVendors();
 	
 	public Vendor getVendorByID(int id);
+	
+	public void deleteVendor(int id);
 }

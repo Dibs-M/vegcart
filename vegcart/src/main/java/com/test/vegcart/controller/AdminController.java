@@ -81,11 +81,59 @@ public class AdminController {
 		return customerService.getAllCustomer();
 	}
 	
+	@GetMapping("/admindeletecustomer")
+	public String deleteCustomer(Model model,@RequestParam("mobile") String mobileNo){
+		customerService.deleteCustomer(mobileNo);
+		model.addAttribute("customers", getCustomers());
+		return "admincustomerpage";
+	}
+	
+	
+	@GetMapping("/admindeactivatecustomer")
+	public String deactivateCustomer(Model model,@RequestParam("mobile") String mobileNo){
+		Customer customer=new Customer();
+		customer.setMobile(mobileNo);
+		try {
+			customer=customerService.getCustomerByMobile(customer);
+			customer.setActive("N");
+			customerService.addCustomer(customer);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		model.addAttribute("customers", getCustomers());
+		return "admincustomerpage";
+	}
+	
+	
+	
 	@GetMapping("/adminvendors")
 	public String getAllVendors(Model model){
 		model.addAttribute("vendors", vendorService.getAllVendors());
 		return "adminvendorpage";
 	}
+	
+	@GetMapping("/admindeletevendor")
+	public String deleteVendor(Model model,@RequestParam("id") int id){
+		vendorService.deleteVendor(id);
+		model.addAttribute("vendors", vendorService.getAllVendors());
+		return "adminvendorpage";
+	}
+	
+	@GetMapping("/admindeactivatevendor")
+	public String deactivateVendor(Model model,@RequestParam("id") int id){
+		Vendor vendor=vendorService.getVendorByID(id);
+		vendor.setActive("N");
+		try {
+			vendorService.registerVendor(vendor);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		model.addAttribute("vendors", vendorService.getAllVendors());
+		return "adminvendorpage";
+	}
+	
 	
 	@GetMapping("/adminproducts")
 	public String getAllProducts(Model model){

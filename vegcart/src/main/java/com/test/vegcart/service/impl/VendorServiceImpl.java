@@ -150,6 +150,12 @@ public class VendorServiceImpl implements VendorService {
 		return vendorDAO.findOne(id);
 	}
 
+	@Override
+	public void deleteVendor(int id) {
+		// TODO Auto-generated method stub
+		vendorDAO.delete(id);
+	}
+
 	
 	
 

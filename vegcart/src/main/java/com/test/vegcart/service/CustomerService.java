@@ -21,4 +21,6 @@ public interface CustomerService {
 	public List<Order> getCustomerOrdersHistory(Customer customer,String OrderStatus);
 	
 	public List<Customer> getAllCustomer();
+	
+	public void deleteCustomer(String mobileNo);
 }

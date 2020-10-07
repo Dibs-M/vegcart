@@ -124,4 +124,10 @@ public class CustomerServiceImpl implements CustomerService {
 		return customers;
 	}
 
+	@Override
+	public void deleteCustomer(String mobileNo) {
+		// TODO Auto-generated method stub
+		customerDAO.delete(mobileNo);
+	}
+
 }
