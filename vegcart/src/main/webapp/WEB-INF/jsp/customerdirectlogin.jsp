@@ -78,106 +78,9 @@
                         <div class="logo-mobile"><a href="#" title="Xanadu"><img src="assets/images/logo-v2.png" alt="Xanadu-Logo"></a></div>
 
                         <div class="box-right">
-                            <!-- <div class="cart hover-menu">
-                                <p class="icon-cart" title="Add to cart">
-                                    <i class="icon"></i>
-                                    <span class="cart-count">2</span>
-                                </p>
-                                <div class="cart-list list-menu">
-                                    <ul class="list">
-                                        <li>
-                                            <a href="#" title="" class="cart-product-image"><img src="assets/images/products/1.jpg" alt="Product"></a>
-                                            <div class="text">
-                                                <p class="product-name">Union Bed</p>
-                                                <p class="product-price"><span class="price-old">$700.00</span><span class="price">$350.00</span></p>
-                                                <p class="qty">QTY:01</p>
-                                            </div>
-                                            <a class="close" href="#" title="close"><i class="fa fa-times-circle"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="#" title="" class="cart-product-image"><img src="assets/images/products/2.jpg" alt="Product"></a>
-                                            <div class="text">
-                                                <p class="product-name">Union Bed</p>
-                                                <p class="product-price"><span class="price-old">$700.00</span><span class="price">$350.00</span></p>
-                                                <p class="qty">QTY:01</p>
-                                            </div>
-                                            <a class="close" href="#" title="close"><i class="fa fa-times-circle"></i></a>
-                                        </li>
-                                    </ul>
-                                    <p class="total"><span class="left">Total:</span> <span class="right">$1121.98</span></p>
-                                    <div class="bottom">
-                                        <a class="link-v1" href="#" title="viewcart">View Cart</a>
-                                        <a class="link-v1 rt" href="#" title="checkout">Check out</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="search dropdown" data-toggle="modal" data-target=".bs-example-modal-lg">
-                                <i class="icon"></i>
-                            </div> -->
+                           
                         </div>
-                        <!-- 
-                        <nav class="mega-menu">
-                            <!-- Brand and toggle get grouped for better mobile display -->
-                              <!-- 
-                            <ul class="nav navbar-nav" id="navbar">
-                                <li class="level1 active dropdown"><a href="#" title="Home">Home</a>
-                                    <ul class="menu-level-1 dropdown-menu">
-                                        <li class="level2"><a href="home_v1.html" title="Home 1">Home 1</a></li>
-                                        <li class="level2"><a href="home_v2.html" title="Home 2">Home 2</a></li>
-                                        <li class="level2"><a href="home_v3.html" title="Home 3">Home 3</a></li>
-                                    </ul>
-                                </li>
-                                <li class="level1"><a href="#" title="About us">About us</a></li>
-                                <li class="level1"><a href="#" title="Store">Store</a></li>
-                                <li class="level1 dropdown">
-                                    <a href="#" title="men">Page</a>
-                                    <div class="sub-menu sub-menu-v2 dropdown-menu">
-                                        <div class="top-sub-menu">
-                                            <img src="assets/images/top-submenu1.jpg" alt="images">
-                                        </div>
-                                        <ul class="menu-level-1">
-                                            <li class="level2"><a href="#">Living Room</a>
-                                                <ul class="menu-level-2">
-                                                    <li class="level3"><a href="#" title="Seatings">Seatings</a></li>
-                                                    <li class="level3"><a href="#" title="Tables">Tables</a></li>
-                                                    <li class="level3"><a href="#" title="Accessories">Accessories</a></li>
-                                                    <li class="level3"><a href="#" title="Series">Series</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="level2"><a href="#">BATH Room</a>
-                                                <ul class="menu-level-2">
-                                                    <li class="level3"><a href="#" title="Lighting">Lighting</a></li>
-                                                    <li class="level3"><a href="#" title="Storage">Storage</a></li>
-                                                    <li class="level3"><a href="#" title="Accessories">Accessories</a></li>
-                                                    <li class="level3"><a href="#" title="Beds">Beds</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="level2"><a href="#">KITCHEN Room</a>
-                                                <ul class="menu-level-2">
-                                                    <li class="level3"><a href="#" title="Cleaning Tools">Cleaning Tools</a></li>
-                                                    <li class="level3"><a href="#" title="Waste Bins">Waste Bins</a></li>
-                                                    <li class="level3"><a href="#" title="Pots & Pans">Pots & Pans</a></li>
-                                                    <li class="level3"><a href="#" title="Beds">Beds</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="level2"><a href="#">Living Room</a>
-                                                <ul class="menu-level-2">
-                                                    <li class="level3"><a href="#" title="Seatings">Seatings</a></li>
-                                                    <li class="level3"><a href="#" title="Tables">Tables</a></li>
-                                                    <li class="level3"><a href="#" title="Accessories">Accessories</a></li>
-                                                    <li class="level3"><a href="#" title="Series">Series</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                        <!-- End RightSubMenu -->
-                                    </div>
-                                    <!-- End Dropdow Menu --> <!-- 
-                                </li>
-                                <li class="level1"><a href="#" title="collections">Blog</a></li>
-                                <li class="level1"><a href="#" title="Contact us">Contact us</a></li>
-                            </ul>
-                        </nav>
-                          -->
+  
                     </div>
                 </div>
                 <!-- End container -->
@@ -198,7 +101,7 @@
             <div class="page-login box space-50">
                 <div class="row">
                  <div class="col-md-12 sign-in space-30">
-                        <h3>sign in</h3>
+                        <h3>Sign in</h3>
                         <p>Hello, welcome to your account.</p>
                          <!--   <div class="social space-30 box">
                             <a class="float-left" href="#" title="facebook">

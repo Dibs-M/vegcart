@@ -153,10 +153,12 @@ public class CustomerController {
 		}
 		
 		if(result.equals("success")) {
+			System.out.println("Success page");
 			model.addAttribute("vegetables", vendorService.getAllVendorProducts());
 			result="home";
 		}else {
-			result="login";
+			System.out.println("Failed page");
+			result="loginfailed";
 		}
 		
 		return result;

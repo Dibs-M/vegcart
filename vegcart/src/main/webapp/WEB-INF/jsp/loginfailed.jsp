@@ -191,8 +191,8 @@
             <div class="page-login box space-50">
                 <div class="row">
                  <div class="col-md-12 sign-in space-30">
-                        <h3>sign in</h3>
-                        <p>Hello, welcome to your account.</p>
+                        <h3>Sign in</h3>
+                        <p style="color:red">Login failed ! Please try again.</p>
                          <!--   <div class="social space-30 box">
                             <a class="float-left" href="#" title="facebook">
                                 <i class="fa fa-facebook"></i>
