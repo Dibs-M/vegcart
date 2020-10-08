@@ -223,6 +223,7 @@ public class AdminController {
 	public String deleteAnyOrder(Model model,@RequestParam("id") int id){
 		adminService.deleteCustomerOrder(id);
 		model.addAttribute("customerorders", adminService.getCustomerOrders());
+		
 		return "admincustomerorderpage";
 	}
 	
