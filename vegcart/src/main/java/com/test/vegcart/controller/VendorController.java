@@ -115,6 +115,7 @@ public class VendorController {
 	@GetMapping("/vendororderhistory")
 	public String vendorOrderHistory(Model model,HttpServletRequest request) {
 		String result="fail";
+		
 		Vendor vendor=LoginUtil.getLoginVendor(request);
 		model.addAttribute("vendorordershistory", vendorService.getVendorOrders(vendor,ApplicationConstant.ORDER_DELIVERED));
 		result="vendororderhistory";
@@ -130,22 +131,24 @@ public class VendorController {
 		return result;
 	}
 	
-	@PostMapping("/editvendorproductp")
-	public String editVendorProduct(Model model,@RequestParam("editvendorproduct") int id) {
-		String result="editvendorproducts";
-		model.addAttribute("masterproducts", masterService.getProducts());
-		model.addAttribute("masterunits", masterService.getUnits());
-		VendorProducts vendorProducts=null;
-
-
+	@PostMapping("/addProduct")
+	// vendorProducts returned from the jsp page
+	public String addProduct(Model model,VendorProducts vendorProducts,HttpServletRequest request) {
+		String result="vendoraddproduct";
+		List<VendorProducts> vendorProductsl=new ArrayList<>();
 		try {
-			vendorProducts=vendorService.getProductById(id);
-			
+			Vendor vendor=LoginUtil.getLoginVendor(request);
+			vendorProducts.setVendorId(vendor.getId());
+			result=vendorService.addProduct(vendorProducts);
+			/*model.addAttribute("masterproducts", masterService.getProducts());
+			model.addAttribute("masterunits", masterService.getUnits());*/
+			vendorProductsl=vendorService.getProduct(vendor.getId());
+			model.addAttribute("vendorProducts", vendorProductsl);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		model.addAttribute("vendorProduct", vendorProducts);
+		result="vendoraddproduct";
 		return result;
 	}
 	
@@ -170,26 +173,26 @@ public class VendorController {
 		return result;
 	}
 	
-	@PostMapping("/addProduct")
-	// vendorProducts returned from the jsp page
-	public String addProduct(Model model,VendorProducts vendorProducts,HttpServletRequest request) {
-		String result="vendoraddproduct";
-		List<VendorProducts> vendorProductsl=new ArrayList<>();
+	@PostMapping("/editvendorproductp")
+	public String editVendorProduct(Model model,@RequestParam("editvendorproduct") int id) {
+		String result="editvendorproducts";
+		model.addAttribute("masterproducts", masterService.getProducts());
+		model.addAttribute("masterunits", masterService.getUnits());
+		VendorProducts vendorProducts=null;
+
+
 		try {
-			Vendor vendor=LoginUtil.getLoginVendor(request);
-			vendorProducts.setVendorId(vendor.getId());
-			result=vendorService.addProduct(vendorProducts);
-			/*model.addAttribute("masterproducts", masterService.getProducts());
-			model.addAttribute("masterunits", masterService.getUnits());*/
-			vendorProductsl=vendorService.getProduct(vendor.getId());
-			model.addAttribute("vendorProducts", vendorProductsl);
+			vendorProducts=vendorService.getProductById(id);
+			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		result="vendoraddproduct";
+		model.addAttribute("vendorProduct", vendorProducts);
 		return result;
 	}
+	
+
 	
 	
 	@PostMapping("/updateProduct")

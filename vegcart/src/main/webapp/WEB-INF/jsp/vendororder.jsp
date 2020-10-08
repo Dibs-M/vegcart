@@ -118,102 +118,12 @@
                             <td>${vendororder.totalAmount}</td>
                             <td>${vendororder.orderDate}</td>
                             <td>${vendororder.customerAddress}</td>
-                            <td><a class="link-v1 rt" href="#" title="order delivery" onclick="completeVendorOrder('${vendororder.id}');">Order Delivered</a></td>
+                            <td><a class="link-v1 rt" href="#" title="order delivery" onclick="completeVendorOrder('${vendororder.id}');">Order Pending</a></td>
                             </tr>
                             
                             </c:forEach>
                             
-                            
-                               <!--  <tr class="item_cart">
-                                    <td class="product-photo"><img src="assets/images/products/3.jpg" alt="Futurelife"></td>
-                                    <td class="produc-name"><a href="#" title="">Name product 01</a></td>
-                                    <td class="produc-price"><input value="$69.90" size="4" type="text"></td>
-                                    <td class="product-quantity">
-                                        <form enctype="multipart/form-data">
-                                        <div class="product-signle-options product_15 clearfix">
-                                            <div class="selector-wrapper size">
-                                                <div class="quantity">
-                                                    <input data-step="1" value="1" title="Qty" class="qty" size="4" type="text">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
-                                    </td>
-                                    <td class="total-price"></td>
-                                    <td class="product-remove"><a class="remove" href="#" title="close"><img src="assets/images/icon-delete-cart.png" alt="close"></a></td>
-                                </tr>
-                                <tr class="item_cart">
-                                    <td class="product-photo"><img src="assets/images/products/1.jpg" alt="Futurelife"></td>
-                                    <td class="produc-name"><a href="#" title="">Name product 01</a></td>
-                                    <td class="produc-price"><input value="$51.59" size="4" type="text"></td>
-                                    <td class="product-quantity">
-                                        <form enctype="multipart/form-data">
-                                            <div class="product-signle-options product_15 clearfix">
-                                                <div class="selector-wrapper size">
-                                                    <div class="quantity">
-                                                        <input data-step="1" value="2" title="Qty" class="qty" size="4" type="text">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </td>
-                                    <td class="total-price"></td>
-                                    <td class="product-remove"><a class="remove" href="#" title="close"><img src="assets/images/icon-delete-cart.png" alt="close"></a></td>
-                                </tr>
-                                <tr class="item_cart">
-                                    <td class="product-photo"><img src="assets/images/products/5.jpg" alt="Futurelife"></td>
-                                    <td class="produc-name"><a href="#" title="">Name product 01</a></td>
-                                    <td class="produc-price"><input value="$51.59" size="4" type="text"></td>
-                                    <td class="product-quantity">
-                                        <form enctype="multipart/form-data">
-                                            <div class="product-signle-options product_15 clearfix">
-                                                <div class="selector-wrapper size">
-                                                    <div class="quantity">
-                                                        <input data-step="1" value="2" title="Qty" class="qty" size="4" type="text">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </td>
-                                    <td class="total-price"></td>
-                                    <td class="product-remove"><a class="remove" href="#" title="close"><img src="assets/images/icon-delete-cart.png" alt="close"></a></td>
-                                </tr>
-                                <tr class="item_cart">
-                                    <td class="product-photo"><img src="assets/images/products/8.jpg" alt="Futurelife"></td>
-                                    <td class="produc-name"><a href="#" title="">Name product 01</a></td>
-                                    <td class="produc-price"><input value="$51.59" size="4" type="text"></td>
-                                    <td class="product-quantity">
-                                        <form enctype="multipart/form-data">
-                                            <div class="product-signle-options product_15 clearfix">
-                                                <div class="selector-wrapper size">
-                                                    <div class="quantity">
-                                                        <input data-step="1" value="2" title="Qty" class="qty" size="4" type="text">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </td>
-                                    <td class="total-price"></td>
-                                    <td class="product-remove"><a class="remove" href="#" title="close"><img src="assets/images/icon-delete-cart.png" alt="close"></a></td>
-                                </tr>
-                                <tr class="item_cart">
-                                    <td class="product-photo"><img src="assets/images/products/6.jpg" alt="Futurelife"></td>
-                                    <td class="produc-name"><a href="#" title="">Name product 01</a></td>
-                                    <td class="produc-price"><input value="$51.59" size="4" type="text"></td>
-                                    <td class="product-quantity">
-                                        <form enctype="multipart/form-data">
-                                            <div class="product-signle-options product_15 clearfix">
-                                                <div class="selector-wrapper size">
-                                                    <div class="quantity">
-                                                        <input data-step="1" value="2" title="Qty" class="qty" size="4" type="text">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </td>
-                                    <td class="total-price"></td>
-                                    <td class="product-remove"><a class="remove" href="#" title="close"><img src="assets/images/icon-delete-cart.png" alt="close"></a></td>
-                                </tr> -->
+ 
                             </tbody>
                         </table>
                         
