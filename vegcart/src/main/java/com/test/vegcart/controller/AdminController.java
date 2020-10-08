@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.test.vegcart.entity.Admin;
 import com.test.vegcart.entity.Customer;
+import com.test.vegcart.entity.Product;
+import com.test.vegcart.entity.Units;
 import com.test.vegcart.entity.Vendor;
 import com.test.vegcart.service.AdminService;
 import com.test.vegcart.service.CustomerService;
@@ -141,11 +143,57 @@ public class AdminController {
 		return "adminproductspage";
 	}
 	
+	
+	@PostMapping("/adminaddproduct")
+	public String addProduct(Model model,Product product){
+		 masterService.addProduct(product);
+		model.addAttribute("products", masterService.getProducts());
+		return "adminproductspage";
+	}
+	
+	@PostMapping("/adminupdateproduct")
+	public String updateProduct(Model model,Product product){
+		 masterService.updateProduct(product);
+		model.addAttribute("products", masterService.getProducts());
+		return "adminproductspage";
+	}
+	
+	@GetMapping("/admindeleteproduct")
+	public String deleteProduct(Model model,@RequestParam("id") int id){
+		masterService.deleteProduct(id);
+		model.addAttribute("products", masterService.getProducts());
+		return "adminproductspage";
+	}
+	
+	
 	@GetMapping("/adminunits")
 	public String getAllUnits(Model model){
 		model.addAttribute("units", masterService.getUnits());
 		return "adminunitspage";
 	}
+	
+	@PostMapping("/adminaddunit")
+	public String addUnit(Model model,Units unit){
+		masterService.addUnit(unit);;
+		model.addAttribute("units", masterService.getUnits());
+		return "adminunitspage";
+	}
+	
+	@PostMapping("/adminupdateunit")
+	public String updateUnit(Model model,Units unit){
+		 masterService.updateUnit(unit);
+		model.addAttribute("units", masterService.getUnits());
+		return "adminunitspage";
+	}
+	
+	@GetMapping("/admindeleteunit")
+	public String deleteUnit(Model model,@RequestParam("id") int id){
+		masterService.deleteUnit(id);
+		model.addAttribute("units", masterService.getUnits());
+		return "adminunitspage";
+	}
+	
+	
 	
 	@GetMapping("/adminvendorproducts")
 	public String getAllVendorProducts(Model model){
@@ -153,9 +201,29 @@ public class AdminController {
 		return "adminvendorproductspage";
 	}
 	
+	@GetMapping("/adminvendorproductdelete")
+	public String deleteAnyVendorProduct(Model model,@RequestParam("id") int id){
+		 try {
+			vendorService.deleteProduct(id);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		model.addAttribute("vendorproducts", vendorService.getAllVendorProducts());
+		return "adminvendorproductspage";
+	}
+	
 	@GetMapping("/admincustomerorder")
 	public String getAllOrders(Model model){
 		model.addAttribute("customerorders", adminService.getCustomerOrders());
+		return "admincustomerorderpage";
+	}
+	
+	@GetMapping("/admincustomerorderdelete")
+	public String deleteAnyOrder(Model model,@RequestParam("id") int id){
+		adminService.deleteCustomerOrder(id);
+		model.addAttribute("customerorders", adminService.getCustomerOrders());
+		
 		return "admincustomerorderpage";
 	}
 	

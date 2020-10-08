@@ -53,6 +53,42 @@ public class MaserServiceImpl implements MasterService {
 		return unitList;
 	}
 
+	@Override
+	public void addProduct(Product product) {
+		// TODO Auto-generated method stub
+		productDAO.save(product);
+	}
+
+	@Override
+	public void updateProduct(Product product) {
+		// TODO Auto-generated method stub
+		productDAO.save(product);
+	}
+
+	@Override
+	public void deleteProduct(int id) {
+		// TODO Auto-generated method stub
+		productDAO.delete(id);
+	}
+
+	@Override
+	public void addUnit(Units unit) {
+		// TODO Auto-generated method stub
+		unitDAO.save(unit);
+	}
+
+	@Override
+	public void updateUnit(Units unit) {
+		// TODO Auto-generated method stub
+		unitDAO.save(unit);
+	}
+
+	@Override
+	public void deleteUnit(int id) {
+		// TODO Auto-generated method stub
+		unitDAO.delete(id);
+	}
+
 	
 
 	

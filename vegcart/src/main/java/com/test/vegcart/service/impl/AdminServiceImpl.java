@@ -39,4 +39,10 @@ public class AdminServiceImpl implements AdminService {
 		return orders;
 	}
 
+	@Override
+	public void deleteCustomerOrder(int id) {
+		// TODO Auto-generated method stub
+		orderDAO.delete(id);
+	}
+
 }
