@@ -10,5 +10,7 @@ public interface AdminService {
 	public Admin getAdminByUserName(Admin admin);
 	
 	public List<Order> getCustomerOrders();
+	
+	public void deleteCustomerOrder(int id);
 
 }
