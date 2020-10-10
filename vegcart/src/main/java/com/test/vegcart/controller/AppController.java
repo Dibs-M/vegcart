@@ -49,4 +49,12 @@ public class AppController {
 		return "vendorlogin";
 	}
 	
+	
+	
+	@GetMapping("/notallowed")
+	public String getUnauthorizedPage(HttpServletRequest request) {
+		HttpSession session=request.getSession();
+		session.invalidate();
+		return "unauthorizedaccess";
+	}
 }

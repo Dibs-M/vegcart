@@ -8,6 +8,11 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.test.vegcart.entity.Admin;
+import com.test.vegcart.entity.Customer;
+import com.test.vegcart.entity.Vendor;
+import com.test.vegcart.util.LoginUtil;
+
 @Component
 public class VegcartSecurityInterceptor implements HandlerInterceptor {
 	
@@ -34,7 +39,24 @@ public class VegcartSecurityInterceptor implements HandlerInterceptor {
 		//System.out.println(request.getRequestURL()+" is allowed");
 		System.out.println("allowedURI="+allowedURI);
 		System.out.println(request.getRequestURI()+" is allowed");
-		return true;
+		boolean isallowed=true;
+		String incomingURI=request.getRequestURI();
+	/*	if(!allowedURI.contains(incomingURI)) {
+			Customer customer=LoginUtil.getLoginUser(request);
+			Vendor vendor=LoginUtil.getLoginVendor(request);
+			Admin admin=LoginUtil.getLoginAdmin(request);
+			if(null!=customer) {
+				isallowed=incomingURI.startsWith("/customer");
+			}else if(null!=vendor) {
+				isallowed=incomingURI.startsWith("/vendor");
+			}else if(null!=admin) {
+				isallowed=incomingURI.startsWith("/admin");
+			}
+		}*/
+		if(!isallowed) {
+			response.sendRedirect("/notallowed");
+		}
+		return isallowed;
 	}
 
 }
