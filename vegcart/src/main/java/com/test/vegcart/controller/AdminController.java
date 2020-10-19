@@ -143,6 +143,11 @@ public class AdminController {
 		return "adminproductspage";
 	}
 	
+	@GetMapping("/adminaddproductp")
+	public String addProductPage(){
+		
+		return "adminaddproductpage";
+	}
 	
 	@PostMapping("/adminaddproduct")
 	public String addProduct(Model model,Product product){
@@ -150,6 +155,13 @@ public class AdminController {
 		model.addAttribute("products", masterService.getProducts());
 		return "adminproductspage";
 	}
+	
+	@GetMapping("/adminupdateproductp")
+	public String updateProductPage(){
+		
+		return "adminupdateproductpage";
+	}
+	
 	
 	@PostMapping("/adminupdateproduct")
 	public String updateProduct(Model model,Product product){
@@ -172,12 +184,26 @@ public class AdminController {
 		return "adminunitspage";
 	}
 	
+	@GetMapping("/adminaddunitp")
+	public String addUnitPage(){
+		
+		return "adminaddunitpage";
+	}
+	
+	
 	@PostMapping("/adminaddunit")
 	public String addUnit(Model model,Units unit){
 		masterService.addUnit(unit);;
 		model.addAttribute("units", masterService.getUnits());
 		return "adminunitspage";
 	}
+	
+	@GetMapping("/adminupdateunitp")
+	public String updateUnitPage(){
+		
+		return "adminupdateunitpage";
+	}
+	
 	
 	@PostMapping("/adminupdateunit")
 	public String updateUnit(Model model,Units unit){
