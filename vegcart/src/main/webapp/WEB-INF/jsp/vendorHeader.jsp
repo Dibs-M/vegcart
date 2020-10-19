@@ -49,7 +49,7 @@
                 <div class="container container-ver2">
                     <div class="inner-topbar box">
                         <div class="float-left">
-                            <p><h6>WELCOME,${loginvendor.vendorName}</h6></p>
+                            <p><h2>WELCOME,${loginvendor.vendorName}</h2></p>
                         </div>
                         <div class="float-right align-right">
                             
@@ -59,7 +59,8 @@
                                 <ul class="list-menu">
                                 <!--     <li style="width:90px"><a href="addvendorproductp" title="Add Product">My Products</a></li> -->
                                      <li style="width:90px"><a href="getProducts" title="My Products">My Products</a></li>
-                                     <li style="width:90px"><a href="vendororder" title="My Orders" >My Orders</a></li> 
+                                     <li style="width:90px"><a href="#" title="My Orders" onclick="openVendorOrderPage();">My Orders</a></li> 
+                                  
                                      <li style="width:90px"><a href="vendororderhistory" title="My Order History" >My Order History</a></li>
                                      
 <!--                                     <li style="width:90px"><a href="vendororder" title="My Orders" onclick="openVendorOrderPage()">My Orders</a></li> -->
@@ -67,6 +68,9 @@
                                 </ul>
                                 </c:if>
                             </div>
+                               <form action="vendororder" id="vendororderform" method="post">
+                                      <input type="hidden" id="orderid" name="orderid" >
+                                     </form>
                             <c:if test="${not empty loginvendor}">
                              <a class="link-v1 rt" href="vendorlogout" title="vendor logout" >Logout</a>
                             </c:if>

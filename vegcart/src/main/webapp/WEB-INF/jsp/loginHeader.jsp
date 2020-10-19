@@ -61,12 +61,12 @@
                                 <a class="acc" href="#" title="Action"><img src="assets/images/icon-user-header.png" alt="icon"> &nbsp;&nbsp; Action</a>
                                 <ul class="list-menu">
                                     <li  style="width:90px"><a href="vendorlogin" title="Admin Login">Admin Login</a></li>
-                                    <li  style="width:90px"><a href="vendorlogin" title="Partner Login">Partner Login</a></li>
+<!--                                     <li  style="width:90px"><a href="vendorlogin" title="Partner Login">Partner Login</a></li> -->
                                     <li  style="width:90px"><a href="vendorlogin" title="Vendor Login">Vendor Login</a></li>
                                     <li  style="width:90px"><a href="custonmerdirectlogin" title="Customer Login">Customer Login</a></li>
-                                    <c:if test="${not empty user}">
+  <%--                                   <c:if test="${not empty user}">
                                     <li  style="width:90px"><a href="customerorders" title="My Order">My Orders</a></li>
-                                    </c:if>
+                                    </c:if> --%>
                                 </ul>
                             </div>
                             <!--

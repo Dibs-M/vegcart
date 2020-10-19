@@ -5,7 +5,7 @@
  </c:if>
   <c:if test="${not empty user && user.userType=='User'}">
   userHeader
-   <jsp:include page="userHeader.jsp" /> 
+   <jsp:include page="customerHeader.jsp" /> 
  </c:if>
   <c:if test="${empty loginvendor && empty loginuser}">
   mainHeader

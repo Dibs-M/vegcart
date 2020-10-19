@@ -113,8 +113,18 @@
             <div class="page-login box space-50">
                 <div class="row">
                  <div class="col-md-12 sign-in space-30">
-                        <h3>Sign in</h3>
-                        <p>Hello, welcome to your account.</p>
+                     
+                     
+                         <c:if test="${not empty vendorinfo}">
+                         <h4>Registration Successfull.</h4>
+                         <br>
+                         <h4>Hello ${vendorinfo}, welcome to your account.</h4>
+                         <br>
+                         </c:if>
+                            <h4>Sign in</h4>
+                             <br>
+                   
+                         
                          <!--   <div class="social space-30 box">
                             <a class="float-left" href="#" title="facebook">
                                 <i class="fa fa-facebook"></i>
