@@ -113,50 +113,7 @@
                                 <i class="icon"></i>
                             </div> -->
                         </div>
-                        <nav class="mega-menu">
-                            <!-- Brand and toggle get grouped for better mobile display -->
-                            <ul class="nav navbar-nav" id="navbar">
-                               <li class="level1 active dropdown"><a href="./vegetables_catalog.html" title="Vegetables">Vegetables</a>
-                                <ul class="menu-level-1 dropdown-menu">
-                                    <li class="level2"><a href="./vegetables_catalog.html" title="Vegetables 1">Fresh Vegetables</a></li>
-                                    <li class="level2"><a href="./vegetables_catalog.html" title="Vegetables 2">Cut Vegetables</a></li>
-                                    
-                                </ul>
-                            </li>
-							<li class="level1 active dropdown"><a href="./fruit_catalog.html" title="Fruit">Fruit</a>
-                                <ul class="menu-level-1 dropdown-menu">
-                                    <li class="level2"><a href="./fruit_catalog.html" title="Fruit 1">Fresh Fruit</a></li>
-                                    <li class="level2"><a href="./fruit_catalog.html" title="Fruit 2">Cut Fruit</a></li>
-                                    
-                                </ul>
-                            </li>
-							<li class="level1 active dropdown"><a href="./beverages_catalog.html" title="Beverages">Beverages</a>
-                                <ul class="menu-level-1 dropdown-menu">
-                                    <li class="level2"><a href="./beverages_catalog.html" title="Beverages 1">Juices</a></li>
-                                    <li class="level2"><a href="./beverages_catalog.html" title="Beverages 2">Soft Drinks</a></li>
-									<li class="level2"><a href="./beverages_catalog.html" title="Beverages 2">Water</a></li>
-									<li class="level2"><a href="./beverages_catalog.html" title="Beverages 2">Soda</a></li>
-									<li class="level2"><a href="./beverages_catalog.html" title="Beverages 2">Instant Drink Mix</a></li>
-                                    <li class="level2"><a href="./beverages_catalog.html" title="Beverages 2">Energy Drinks</a></li>
-									
-                                </ul>
-                            </li>
-							<li class="level1 active dropdown"><a href="./frozen_food_catalog.html" title="Beverages">Frozen  Food</a>
-                                <ul class="menu-level-1 dropdown-menu">
-                                    <li class="level2"><a href="./frozen_food_catalog.html" title="Beverages 1">Frozen Veg</a></li>
-                                    <li class="level2"><a href="./frozen_food_catalog.html" title="Beverages 2">Frozen Non-Veg</a></li>
-                                </ul>
-                            </li>
-							<li class="level1 active dropdown"><a href="./meats_frozen_seafood_catalog.html" title="Beverages">meats-frozen-seafood</a>
-                                <ul class="menu-level-1 dropdown-menu">
-                                    <li class="level2"><a href="./meats_frozen_seafood_catalog.html" title="Beverages 1">Eggs</a></li>
-                                    <li class="level2"><a href="./meats_frozen_seafood_catalog.html" title="Beverages 2">chicken</a></li>
-									<li class="level2"><a href="./meats_frozen_seafood_catalog.html" title="Beverages 2">meat</a></li>
-									<li class="level2"><a href="./meats_frozen_seafood_catalog.html" title="Beverages 2">seafoods</a></li>
-                                </ul>
-                            </li>
-                            </ul>
-                        </nav>
+ 
                     </div>
                 </div>
                 <!-- End container -->
@@ -172,101 +129,13 @@
                     <p><a href="#" title="Home">Home</a><i class="fa fa-caret-right"></i>Checkout</p>
                 </div>
             </div>
-            <!-- <div class="container container-ver2 space-padding-tb-30">'
-                    <div class="row head-cart" align="center" >
-                        <div class="col-md-4 space-30">
-                            <div class="item active center">
-                                <p class="icon">01</p>
-                                <h3>Shopping cart</h3>
-                            </div>
-                        </div>
-                        End col-md-4
-                        <div class="col-md-4 space-30">
-                            <div class="item active center">
-                                <p class="icon">02</p>
-                                <p class="icon"></p>
-                                <h3>Check out</h3>
-                            </div>
-                        </div>
-                        End col-md-4
-                        <div class="col-md-4 space-30">
-                            <div class="item center">
-                                <p class="icon">03</p>
-                                <h3>Order completed</h3>
-                            </div>
-                        </div>
-                        End col-md-4
-                    </div> -->
+           
                 </div>
                 <!-- End container -->
             <div class="cart-box-container check-out">
                 <div class="container container-ver2">
                     <div class="row" align="center">
-                      <!--   <div class="col-md-6">
-                            <h3 class="title-brand">BILLING ADDRESS</h3>
-                            <form class="form-horizontal">
-                                <div class="form-group col-md-12">
-                                    <label for="inputfname" class=" control-label">Mobile <span class="color">*</span></label>                            
-                                    <input type="text" placeholder="Enter your mobile..." id="inputfname" class="form-control">  
-                                </div>
-                                <div class="form-group col-md-12">
-                                    <label for="inputlname" class=" control-label">Password <span class="color">*</span></label>                            
-                                    <input type="password" placeholder="Enter your password..." id="inputlname" class="form-control">  
-                                </div>
-                                <div class="form-group col-md-12">
-                                    <label for="inputcompany" class=" control-label">Delivery Address<span class="color">*</span></label> 
-                                    <textarea rows="5" class="form-control" placeholder="Enter your Delivery..." >
-                                    
-                                    </textarea>                           
-                                    <input type="text" placeholder="Enter your Delivery..." id="inputcompany" class="form-control">  
-                                </div>
-                                <div>
-                                    <div class="form-group col-md-12">
-                                        <label for="inputemail" class=" control-label">Alternate Mobile<span class="color">*</span></label>                            
-                                        <input type="text" placeholder="Enter your email..." id="inputemail" class="form-control">  
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="inputphone" class=" control-label">Ship to a different address?<span class="color">*</span></label>                            
-                                        <input type="text" placeholder="Enter your phone..." id="inputphone" class="form-control">
-                                        <textarea rows="5" class="form-control" placeholder="Enter your Delivery..." >
-                                    
-                                    </textarea>  
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputcountry1" class=" control-label">COUNTRY<span class="color">*</span></label>
-                                    <select id="inputcountry1" name="inputcountry1" class="country form-control">
-                                        <option>COUNTRY 2</option>
-                                        <option selected="selected">COUNTRY 1</option>
-                                        <option>COUNTRY 3</option>
-                                        <option>COUNTRY 4</option>
-                                    </select>
-                                </div> 
-                                <div class="form-group">
-                                    <label for="inputstreet" class=" control-label">Address<span class="color">*</span></label>                            
-                                    <input type="text" placeholder="Enter your street address..." id="inputstreet" class="form-control space-20">  
-                                    <input type="text" placeholder="Enter the apartment, floor, suite, etc..." id="inputapartment" class="form-control"> 
-                                </div>                        
-                                <div class="form-group">
-                                    <label for="inputcountry" class=" control-label">Town/City<span class="color">*</span></label>                            
-                                    <input type="text" placeholder="Enter your Town..." id="inputcountry" class="form-control space-20">
-                                </div>
-                                <div>
-                                    <div class="form-group col-md-6">
-                                        <label for="inputfState" class=" control-label">COUNTY <span class="color">*</span></label>                            
-                                        <input type="text" placeholder="Select your county..." id="inputfState" class="form-control">  
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="inputpostcode" class=" control-label">POSTCODE <span class="color">*</span></label>                            
-                                        <input type="text" placeholder="Enter your postcode..." id="inputpostcode" class="form-control">  
-                                    </div>    
-                                </div> 
-                                <span class="form-check space-50">Create an account?</span>
-                                <span class="form-check space-20">Ship to a different address?</span>
-                            </form>
-                            
-                            
-                        </div> -->
+            
                         <!-- End col-md-8 -->
                         <div class="col-md-6 space-30">
                             <div class="box" style="margin-left: 45%;">

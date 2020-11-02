@@ -43,6 +43,8 @@
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div>
+
+
 <!-- End pushmenu -->
 <div class="wrappage">
     <header id="header" class="header-v1 header-v3 header-v4">
@@ -56,25 +58,43 @@
                 
                 </c:if> -->
                 
-                <div class="float-right align-right">
+   <div class="wrappage">
+        <header id="header" class="header-v3 header-v2">
+            <div id="topbar" class="topbar-ver2">
+                <div class="container container-ver2">
+                    <div class="inner-topbar box">
+                        <div class="float-left">
+                            <p><h6>WELCOME ! ,${user.userName}</h6></p>
+                        </div>
+                        <div class="float-right align-right">
+                            
                             <div class="hover-menu">
-                                <a class="acc" href="#" title="Action"><img src="assets/images/icon-user-header.png" alt="icon"> &nbsp;&nbsp; Action</a>
+                                <a class="acc" href="#" title="Action"><img src="assets/images/icon-user-header.png" alt="icon">  &nbsp;&nbsp;Action</a>
+                               <c:if test="${not empty user}">
                                 <ul class="list-menu">
-                                    <li  style="width:90px"><a href="vendorlogin" title="Admin Login">Admin Login</a></li>
-<!--                                     <li  style="width:90px"><a href="vendorlogin" title="Partner Login">Partner Login</a></li> -->
-                                    <li  style="width:90px"><a href="vendorlogin" title="Vendor Login">Vendor Login</a></li>
-                                    <li  style="width:90px"><a href="custonmerdirectlogin" title="Customer Login">Customer Login</a></li>
-                                    <c:if test="${not empty user}">
-                                    <li  style="width:90px"><a href="customerorders" title="My Order">My Orders</a></li>
-                                    </c:if>
+                                <!--     <li style="width:90px"><a href="addvendorproductp" title="Add Product">My Products</a></li> -->
+                                     <li style="width:90px"><a href="getProducts" title="My Products">My Products</a></li>
+                                     <li style="width:90px"><a href="vendororder" title="My Orders" >My Orders</a></li> 
+                                     <li style="width:90px"><a href="vendororderhistory" title="My Order History" >My Order History</a></li>
+                                     
+<!--                                     <li style="width:90px"><a href="vendororder" title="My Orders" onclick="openVendorOrderPage()">My Orders</a></li> -->
+<!--                                       <li style="width:90px"><a href="vendororderhistory" title="My Order History" onclick="openVendorOrderHistory()">My Order History</a></li> -->
                                 </ul>
+                                </c:if>
                             </div>
-                            <!--
                             <c:if test="${not empty user}">
-                             <a class="link-v1 rt" href="logout" title="logout" >Logout</a>
-                             </c:if> -->
+                             <a class="link-v1 rt" href="vendorlogout" title="vendor logout" >Logout</a>
+                            </c:if>
+                            
                             <!-- End hover-menu -->
+                        </div>
+                    </div>
                 </div>
+                <!-- End container -->
+            </div>
+            <!-- End topbar -->
+            </header>
+            </div>
                 
                    <!--  <div class="float-left">
                         <a href="#" title="acc"><img src="assets/images/icon-acc.png" alt="icon"></a>

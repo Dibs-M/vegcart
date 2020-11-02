@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.test.vegcart.dto.EmailDTO;
+import com.test.vegcart.entity.Order;
 import com.test.vegcart.entity.Vendor;
 import com.test.vegcart.entity.VendorProducts;
 import com.test.vegcart.service.EmailService;
@@ -48,12 +49,12 @@ public class VendorController {
 		return "vendorlogin";
 	}
 	
-	
 	@GetMapping("/vendorforgetpassword")
 	public String vendorForget() {
 		
 		return "vendorforgetpassword";
 	}
+	
 	
 	@PostMapping("/vendorregisteration")
 	public String vendorRegistration() {
@@ -62,7 +63,7 @@ public class VendorController {
 	}
 	
 	@PostMapping("/registervendor")
-	public String registerVendor(@ModelAttribute Vendor vendor) {
+	public String registerVendor(Model model,@ModelAttribute Vendor vendor) {
 		String result="fail";
 		
 		try {
@@ -73,6 +74,8 @@ public class VendorController {
 		}
 		
 		if(result.equals("success")) {
+			
+			model.addAttribute("vendorinfo", vendor.getVendorName());
 			result="vendorlogin";
 		}else {
 			result="vendorregister";
@@ -84,6 +87,29 @@ public class VendorController {
 	
 	@PostMapping("/loginvendor")
 	public String loginUser(Model model,@ModelAttribute Vendor vendor,HttpServletRequest request) {
+		/*String result="fail";
+		try {
+			Vendor vendorEntity=vendorService.getVendorByMobile(vendor);
+			if(null!=vendorEntity && vendorEntity.getVendorPassword().equals(vendor.getVendorPassword())) {
+				result="success";
+			}
+			vendor=vendorEntity;
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		if(result.equals("success")) {
+			model.addAttribute("vendororders", vendorService.getVendorOrders(vendor,ApplicationConstant.ORDER_RECIEVED));
+			vendor.setUserType("Vendor");
+			LoginUtil.setLoginVendor(request, vendor);
+			result="vendororder";
+		}else {
+			result="loginfailed";
+		}
+		
+		return result;*/
 		String result="fail";
 		try {
 			Vendor vendorEntity=vendorService.getVendorByMobile(vendor);
@@ -189,15 +215,23 @@ public class VendorController {
 		return result;
 	}
 	
-	
-	@GetMapping("/vendororder")
+/*	@GetMapping("/vendororder2")
 	public String vendorOrder2(Model model,HttpServletRequest request) {
 		String result="fail";
 		Vendor vendor=LoginUtil.getLoginVendor(request);
-		model.addAttribute("vendororders", vendorService.getVendorOrders(vendor,ApplicationConstant.ORDER_RECIEVED));
-		result="vendororder";
+		//model.addAttribute("vendororders", vendorService.getVendorOrders(vendor,ApplicationConstant.ORDER_RECIEVED));
+		result="vendororder2";
 		return result;
 	}
+
+	
+	@GetMapping("/vendororder11")
+	public @ResponseBody List<Order> vendorOrder21(Model model,HttpServletRequest request) {
+		String result="fail";
+		Vendor vendor=LoginUtil.getLoginVendor(request);
+		
+		return vendorService.getVendorOrders(vendor,ApplicationConstant.ORDER_RECIEVED);
+	}*/
 	
 	@PostMapping("/vendororder")
 	public String vendorOrder(Model model,HttpServletRequest request) {
@@ -350,12 +384,13 @@ public class VendorController {
 			result=vendorService.completeDelivery(orderId);
 			Vendor vendor=LoginUtil.getLoginVendor(request);
 			model.addAttribute("vendororders", vendorService.getVendorOrders(vendor,ApplicationConstant.ORDER_RECIEVED));
+			System.out.println("hello1 "+result);
 			result="vendororder";
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+		System.out.println("hello1 "+result);
 		return result;
 	}
 	

@@ -155,7 +155,7 @@ public class CustomerController {
 		if(result.equals("success")) {
 			System.out.println("Success page");
 			model.addAttribute("vegetables", vendorService.getAllVendorProducts());
-			result="home";
+			result="welcomecustomer";
 		}else {
 			System.out.println("Failed page");
 			result="loginfailed";
