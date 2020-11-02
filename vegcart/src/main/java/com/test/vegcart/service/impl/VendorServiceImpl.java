@@ -156,6 +156,12 @@ public class VendorServiceImpl implements VendorService {
 		vendorDAO.delete(id);
 	}
 
+	@Override
+	public Vendor fetchVendorByEmail(String email) {
+		// TODO Auto-generated method stub
+		return vendorDAO.getVendorByEmail(email);
+	}
+
 	
 	
 

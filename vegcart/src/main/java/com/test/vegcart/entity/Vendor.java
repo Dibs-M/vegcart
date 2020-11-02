@@ -32,6 +32,13 @@ public class Vendor {
 	@Transient
 	private String userType;
 	
+	@Column(name="email")
+	private String email;
+	
+	
+	@Column(name="password_reset")
+	private String passwordReset="N";
+	
 	
 	public int getId() {
 		return id;
@@ -69,6 +76,17 @@ public class Vendor {
 	public void setUserType(String userType) {
 		this.userType = userType;
 	}
-	
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getPasswordReset() {
+		return passwordReset;
+	}
+	public void setPasswordReset(String passwordReset) {
+		this.passwordReset = passwordReset;
+	}
 	
 }

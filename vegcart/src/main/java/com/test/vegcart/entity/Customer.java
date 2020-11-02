@@ -26,6 +26,10 @@ public class Customer {
 	@Column(name="customer_name")
 	private String customerName;
 	
+	
+	@Column(name="email")
+	private String email;
+	
 	@Transient
 	private String checkoutItems;
 	
@@ -86,6 +90,14 @@ public class Customer {
 
 	public void setUserType(String userType) {
 		this.userType = userType;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	
 }

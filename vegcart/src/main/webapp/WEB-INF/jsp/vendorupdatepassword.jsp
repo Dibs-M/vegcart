@@ -201,8 +201,8 @@
             <div class="page-login box space-50">
                 <div class="row">
                  <div class="col-md-12 sign-in space-30">
-                        <h3>Sign in</h3>
-                        <p>Hello, welcome to your account.</p>
+                        <h3>Forget Password</h3>
+                       
                          <!--   <div class="social space-30 box">
                             <a class="float-left" href="#" title="facebook">
                                 <i class="fa fa-facebook"></i>
@@ -214,40 +214,29 @@
                             </a>
                         </div>
                         End social -->
-                        <form  method="POST" action="loginvendor" class="needs-validation" novalidate>
+                        <form  method="POST" action="updatepassword" class="needs-validation" novalidate>
                             <div class="group box space-20">
-                                <label class="control-label" for="inputemail">Mobile no<span class="color">*</span></label>
-                                <input class="form-control" type="text" placeholder="Mobile no" id="vendorMobile" name="vendorMobile" pattern=".{10}" required >
-                                      <div class="valid-feedback">Valid.</div>
-      									<div class="invalid-feedback">Mobile number should be in 10 digits.</div>
+                                <input class="form-control" type="text"  id="mobile" name="mobile" value="${vendormobile}" >
                            	 </div>
-                            <div class="group box">
-                                <label class="control-label" for="inputemail">Password <span class="color">*</span></label>
-                                <input class="form-control" type="password" placeholder="Password" id="vendorPassword" name="vendorPassword" required> 
+                           	 
+                           	 <div class="group box space-20">
+                                <label class="control-label" for="inputpassword">Password<span class="color">*</span></label>
+                                <input class="form-control" type="password" placeholder="password" id="password" name="password"  required >
                                       <div class="valid-feedback">Valid.</div>
-      								<div class="invalid-feedback">Please fill out this field.</div>
-                            </div>
-                            <!-- <div class="remember">
-                                <input id="remeber" type="checkbox" name="check" value="remeber">
-                                <label for="remeber" class="label-check">remember me!</label>
-                                <a class="help" href="#" title="help ?">Fogot your password?</a>   
-                            </div> -->
-						      <%--  <input type="hidden" name="checkoutItems" id="logincheckoutitems" value="${checkoutItems}">          --%>  
-                            <div  class="group box space-20">
-                            <button type="submit" class="link-v1 rt" style="margin-top:10px;" >LOGIN NOW</button>
-                            <a href="#" class="link-v1 rt" onclick="openVendorRegistrationForm();">REGISTER NOW</a>
-                            </div>
-                            <div class="group box space-20">
-                            <a href="vendorforgetpassword" class="link-v1 rt">FORGET PASSWORD</a>
-                            </div>
-                            <div class="group box space-20" style="color:red">
-                            <c:if test="${not empty resetstatus}">
-                                ${resetstatus}
-                             </c:if>
-                             <c:if test="${not empty loginfail}">
-                                ${loginfail}
-                             </c:if>
-                            </div>
+                           	 </div>
+                           	 
+                           	 
+                           	 <div class="group box space-20">
+                                <label class="control-label" for="inputpassword">Confirm Password<span class="color">*</span></label>
+                                <input class="form-control" type="password" placeholder="confirm password" id="confirmpassword"  required >
+                                      <div class="valid-feedback">Valid.</div>
+                           	 </div>
+                           	
+                           	 
+                           	 </div>
+                           
+                            <button type="submit" class="link-v1 rt" style="margin-top:10px;" >UPDATE PASSWORD</button>
+                          
                         </form>
                         
                      </div>

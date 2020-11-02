@@ -8,11 +8,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.test.vegcart.entity.Admin;
-import com.test.vegcart.entity.Customer;
-import com.test.vegcart.entity.Vendor;
-import com.test.vegcart.util.LoginUtil;
-
 @Component
 public class VegcartSecurityInterceptor implements HandlerInterceptor {
 	
@@ -56,7 +51,9 @@ public class VegcartSecurityInterceptor implements HandlerInterceptor {
 		if(!isallowed) {
 			response.sendRedirect("/notallowed");
 		}
+		
 		return isallowed;
+		
 	}
 
 }

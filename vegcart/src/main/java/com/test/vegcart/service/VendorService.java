@@ -29,4 +29,6 @@ public interface VendorService {
 	public Vendor getVendorByID(int id);
 	
 	public void deleteVendor(int id);
+	
+	public Vendor fetchVendorByEmail(String email);
 }

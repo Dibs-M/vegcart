@@ -6,6 +6,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -16,11 +17,14 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.test.vegcart.dto.EmailDTO;
 import com.test.vegcart.entity.Vendor;
 import com.test.vegcart.entity.VendorProducts;
+import com.test.vegcart.service.EmailService;
 import com.test.vegcart.service.MasterService;
 import com.test.vegcart.service.VendorService;
 import com.test.vegcart.util.LoginUtil;
+import com.test.vegcart.util.PasswordUtil;
 import com.test.vegcart.util.ApplicationConstant;
 
 @Controller
@@ -31,6 +35,12 @@ public class VendorController {
 	
 	@Autowired
 	MasterService masterService;
+	
+	@Autowired
+	EmailService emailService;
+	
+	@Value("${email.service.active}")
+	private String emailServiceActive;
 
 	@GetMapping("/vendorlogin")
 	public String vendorLogin() {
@@ -38,6 +48,12 @@ public class VendorController {
 		return "vendorlogin";
 	}
 	
+	
+	@GetMapping("/vendorforgetpassword")
+	public String vendorForget() {
+		
+		return "vendorforgetpassword";
+	}
 	
 	@PostMapping("/vendorregisteration")
 	public String vendorRegistration() {
@@ -82,16 +98,97 @@ public class VendorController {
 		}
 		
 		if(result.equals("success")) {
-			model.addAttribute("vendororders", vendorService.getVendorOrders(vendor,ApplicationConstant.ORDER_RECIEVED));
-			vendor.setUserType("Vendor");
-			LoginUtil.setLoginVendor(request, vendor);
-			result="vendororder";
+			
+			if(vendor.getPasswordReset().equals("Y")) {
+				model.addAttribute("vendormobile",vendor.getVendorMobile());
+				result="vendorupdatepassword";
+			}else {
+				model.addAttribute("vendororders", vendorService.getVendorOrders(vendor,ApplicationConstant.ORDER_RECIEVED));
+				vendor.setUserType("Vendor");
+				LoginUtil.setLoginVendor(request, vendor);
+				result="vendororder";
+			}
+			
 		}else {
+			model.addAttribute("loginfail","User Name Or Password is wrong");
 			result="vendorlogin";
 		}
 		
 		return result;
 	}
+	
+	
+	@PostMapping("/vendoremailcheck")
+	public String vendorEmailCheck(Model model,HttpServletRequest request,@RequestParam("email") String email) {
+		String result="fail";
+		Vendor vendor=vendorService.fetchVendorByEmail(email);
+		if(null!=vendor) {
+			model.addAttribute("resetstatus", "Password has been send on email");
+			EmailDTO emailDTO=new EmailDTO();
+			emailDTO.setTo(email);
+			emailDTO.setSubject("Your New Password");
+			String password=PasswordUtil.getPassword();
+			emailDTO.setContent("Your new passowrd is "+password);
+			emailDTO.setBcc("abh1085@gmail.com");
+			if(emailServiceActive.equals("Y")) {
+				emailService.sendEmail(emailDTO);
+			}
+			
+			vendor.setVendorPassword(password);
+			vendor.setPasswordReset("Y");
+			try {
+				vendorService.registerVendor(vendor);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			result="vendorlogin";
+		}else {
+			model.addAttribute("resetstatus", "Email Id does not match");
+			result="vendorforgetpassword";
+		}
+		
+		
+		return result;
+	}
+	
+	
+	@PostMapping("/updatepassword")
+	public String vendorUpdatePassword(Model model,HttpServletRequest request,@RequestParam("mobile") String mobile,@RequestParam("password") String password) {
+		String result="fail";
+		Vendor vendorDTO=new Vendor();
+		vendorDTO.setVendorMobile(mobile);
+		Vendor vendor=vendorService.getVendorByMobile(vendorDTO);
+		if(null!=vendor) {
+		
+			vendor.setPasswordReset("N");
+			vendor.setVendorPassword(password);
+			try {
+				vendorService.registerVendor(vendor);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			model.addAttribute("resetstatus","Password Updated Successfully");
+			result="vendorlogin";
+		}else {
+			model.addAttribute("resetstatus", "Email Id does not match");
+			result="vendorforgetpassword";
+		}
+		
+		
+		return result;
+	}
+	
+	@PostMapping("/vendorresetpassword")
+	public String vendorResetPassword(Model model,HttpServletRequest request,@RequestParam("email") String email) {
+		String result="fail";
+		String output="";
+		model.addAttribute("resetstatus", output);
+		result="vendorlogin";
+		return result;
+	}
+	
 	
 	@GetMapping("/vendororder")
 	public String vendorOrder2(Model model,HttpServletRequest request) {
