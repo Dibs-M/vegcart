@@ -146,8 +146,8 @@
       									
                            	 </div>
                             <div class="group box">
-                                <label class="control-label" for="inputemail">Password <span class="color">*</span></label>
-                                <input class="form-control" type="password" placeholder="Password" id="vendorPassword" name="vendorPassword" required> 
+                                <label class="control-label" for="inputemail">OTP <span class="color">*</span></label>
+                                <input class="form-control" type="password" placeholder="OTP" id="vendorOtp" name="vendorOtp" required> 
                                       <div class="valid-feedback">Valid.</div>
       								<div class="invalid-feedback">Please fill out this field.</div>
                             </div>
@@ -158,19 +158,13 @@
                             </div> -->
 						      <%--  <input type="hidden" name="checkoutItems" id="logincheckoutitems" value="${checkoutItems}">          --%>  
                             <div  class="group box space-20">
+                            <a href="#" class="link-v1 rt" onclick="sendOtp();">SEND OTP</a>
                             <button type="submit" class="link-v1 rt" style="margin-top:10px;" >LOGIN NOW</button>
                             <a href="#" class="link-v1 rt" onclick="openVendorRegistrationForm();">REGISTER NOW</a>
-                            <a href="vendorforgetpassword" class="link-v1 rt">FORGET PASSWORD</a>
-                            <a href="loginwithotp" class="link-v1 rt">Login WITH OTP</a>
                             </div>
                             
-                            <div class="group box space-20" style="color:red">
-                            <c:if test="${not empty resetstatus}">
-                                ${resetstatus}
-                             </c:if>
-                             <c:if test="${not empty loginfail}">
-                                ${loginfail}
-                             </c:if>
+                            <div class="group box space-20" style="color:red" id="otpdiv">
+                            
                             </div>
                         </form>
                         

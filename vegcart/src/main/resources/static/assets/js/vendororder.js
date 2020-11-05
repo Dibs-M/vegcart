@@ -18,6 +18,14 @@ function openVendorProductEditPage(id){
 	
 }
 
+function sendOtp(){
+	
+	 $.ajax({url: "/sendotp?mobile="+$('#vendorMobile').val(), success: function(result){
+		   //alert(result.message);
+		   $('#otpdiv').text(result.message);
+		  }});
+}
+
 /*
 function onVendorOrderLoad(){
 	alert("Hello");

@@ -18,11 +18,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.test.vegcart.dto.EmailDTO;
+import com.test.vegcart.dto.OtpResponse;
 import com.test.vegcart.entity.Order;
 import com.test.vegcart.entity.Vendor;
 import com.test.vegcart.entity.VendorProducts;
 import com.test.vegcart.service.EmailService;
 import com.test.vegcart.service.MasterService;
+import com.test.vegcart.service.OtpService;
 import com.test.vegcart.service.VendorService;
 import com.test.vegcart.util.LoginUtil;
 import com.test.vegcart.util.PasswordUtil;
@@ -40,14 +42,27 @@ public class VendorController {
 	@Autowired
 	EmailService emailService;
 	
+	@Autowired
+	private OtpService otpService;
+	
 	@Value("${email.service.active}")
 	private String emailServiceActive;
+	
+	
 
 	@GetMapping("/vendorlogin")
 	public String vendorLogin() {
 		
 		return "vendorlogin";
 	}
+	
+	@GetMapping("/loginwithotp")
+	public String vendorOtpLogin() {
+		
+		return "vendorotplogin";
+	}
+	
+	
 	
 	@GetMapping("/vendorforgetpassword")
 	public String vendorForget() {
@@ -84,6 +99,34 @@ public class VendorController {
 		return result;
 	}
 	
+	@GetMapping("/sendotp")
+	public @ResponseBody OtpResponse sendOtp(@RequestParam("mobile") String mobile) {
+		OtpResponse otpResponse=new OtpResponse();
+		
+		Vendor vendor=new Vendor();
+		vendor.setVendorMobile(mobile);
+		Vendor vendorEntity=vendorService.getVendorByMobile(vendor);
+		if(null!=vendorEntity) {
+			otpResponse=otpService.sendOtp(mobile);
+			if(!otpResponse.isError()) {
+				vendorEntity.setVendorOtp(otpResponse.getOtp());
+				try {
+					vendorService.registerVendor(vendorEntity);
+				} catch (Exception e) {
+					otpResponse.setError(true);
+					otpResponse.setMessage("Otp service is not working try after sometime");
+					e.printStackTrace();
+				}
+			}
+			
+		}else {
+			otpResponse.setMessage("You are not regitered on this platform ,first register yourself");
+		}
+		
+		
+		return otpResponse;
+	}
+	
 	
 	@PostMapping("/loginvendor")
 	public String loginUser(Model model,@ModelAttribute Vendor vendor,HttpServletRequest request) {
@@ -113,7 +156,7 @@ public class VendorController {
 		String result="fail";
 		try {
 			Vendor vendorEntity=vendorService.getVendorByMobile(vendor);
-			if(null!=vendorEntity && vendorEntity.getVendorPassword().equals(vendor.getVendorPassword())) {
+			if(null!=vendorEntity && (vendorEntity.getVendorPassword().equals(vendor.getVendorPassword())||vendorEntity.getVendorOtp().equals(vendor.getVendorOtp()))) {
 				result="success";
 			}
 			vendor=vendorEntity;

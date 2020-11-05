@@ -23,6 +23,10 @@ public class Vendor {
 	@Column(name="vendor_mobile")
 	private String vendorMobile;
 	
+	
+	@Column(name="otp")
+	private String vendorOtp;
+	
 	@Column(name="vendor_password")
 	private String vendorPassword;
 	
@@ -88,5 +92,13 @@ public class Vendor {
 	public void setPasswordReset(String passwordReset) {
 		this.passwordReset = passwordReset;
 	}
+	public String getVendorOtp() {
+		return vendorOtp;
+	}
+	public void setVendorOtp(String vendorOtp) {
+		this.vendorOtp = vendorOtp;
+	}
+	
+	
 	
 }
